@@ -1,0 +1,159 @@
+# -*- makefile -*-
+################################################################
+####
+#### This makefile is part of the course
+#### Introduction to Scientific Programming in C++11 and Fortran2003
+#### by Victor Eijkhout (eijkhout@tacc.utexas.edu)
+#### copyright 2017-2025 Victor Eijkhout
+####
+#### Examples of basic C++ constructs
+####
+################################################################
+
+PROGRAMS = null hello return cin version onethird \
+    name trunc ed eps equals pipi fizzbuzzinit fizzbuzzlambda \
+    point3 cindo root c2f f2c \
+    cast size intshortlong intprec int123 io shadowtrue shadowfalse \
+    ref modulo switch string \
+    if logicop pretest whiledo dowhile ifinit initfloat bitor \
+    setbyref arraypass \
+    class template double
+
+LANGUAGE = CXX
+CPPSTANDARD = 23
+include ../Make.inc
+
+RUNS =
+
+RUNS += run_hello
+run_hello : hello
+	@./hello
+
+RUNS += run_version
+run_version : version
+	@./version
+
+RUNS += run_onethird
+run_onethird : onethird
+	@./onethird
+
+RUNS += run_truncf2i run_truncd2f
+run_truncf2i : trunc
+	@( echo 2 && echo 3 && echo 3 ) \
+	| ./trunc \
+	| awk '/f2i/ {p=0} p==1 {print} /F2I/ {p=1}'
+run_truncd2f : trunc
+	@( echo 2 && echo 3 && echo 3 ) \
+	| ./trunc \
+	| awk '/d2f/ {p=0} p==1 {print} /D2F/ {p=1}'
+
+RUNS += run_longdouble
+run_longdouble : double
+	@double \
+	| awk '/longdouble/ {p=0} p==1 {print} /LongDouble/ {p=1}'
+
+RUNS += run_cin
+run_cin : cin
+	( echo Victor ; echo 18 ) \
+	 | ./cin
+	( echo "Victor Eijkhout" ; echo 21 ) \
+	 | ./cin
+
+RUNS += run_return
+run_return : return
+	-./return ; \
+	if [ $$? -ne 0 ] ; then \
+	    echo "Program failed" ; \
+	fi
+
+RUNS += run_ed
+run_ed : ed
+	@./ed
+
+RUNS += run_whiledo
+run_whiledo : whiledo
+	@( echo -3 ; echo 0 ; echo 2 ) | ./whiledo
+
+RUNS += run_dowhile
+run_dowhile : dowhile
+	@( echo -3 ; echo 0 ; echo 2 ) | ./dowhile
+
+RUNS += run_point3
+run_point3 : point3
+	@./point3
+
+RUNS += run_equals
+run_equals : equals
+	@for i in `seq 1 10` ; do \
+	    echo $$i | ./equals \
+	    ; \
+	done
+
+RUNS += run_fbinit
+run_fbinit : fizzbuzzinit
+	@for i in $$( seq 1 30 ) ; do \
+	    echo "$$i:" && echo $$i | ./fizzbuzzinit \
+	 ; done
+
+RUNS += run_eps
+run_eps : eps
+	for e in .1 .01 .001 .0001 .00001 .000001 .0000001 .00000001 ; do \
+	  echo $$e | eps ; echo ; done
+
+RUNS += run_pipi
+run_pipi : pipi
+	@./pipi
+
+RUNS += run_switch
+run_switch : switch
+	@echo "Script:"
+	for v in 1 2 3 4 5 ; do \
+	  echo $$v | ./switch ; \
+	done
+
+RUNS += run_pretest
+run_pretest : pretest
+	@./pretest
+
+RUNS += run_ref
+run_ref : ref
+	@./ref
+
+RUNS += run_bitor
+run_bitor : bitor
+	@./bitor
+
+RUNS += run_setbyref
+run_setbyref : setbyref
+	@./setbyref
+
+RUNS += run_shadowtrue run_shadowfalse
+run_shadowtrue : shadowtrue
+	@./shadowtrue | \
+	  awk '/true/ {p=0} p==1 {print} /True/ {p=1}'
+run_shadowfalse : shadowfalse
+	@./shadowfalse | \
+	  awk '/false/ {p=0} p==1 {print} /False/ {p=1}'
+
+RUNS += run_if
+run_if : if
+	@for i in 50 150 ; do \
+	    echo "... with $$i as input ...." \
+	     && echo $$i | ./if \
+	; done
+
+RUNS += run_ifinit
+run_ifinit : ifinit
+	@echo "Script:"
+	for c in d b a z ; do \
+   echo $$c | ./ifinit ; \
+done
+
+RUNS += run_int123
+run_int123 : int123
+	@echo 0.1 | ./int123
+
+.PHONY: ${RUNS}
+
+include ../../makefiles/Make.cmake
+include ../../makefiles/Make.clean
