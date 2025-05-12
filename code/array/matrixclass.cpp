@@ -35,9 +35,7 @@ public:
   double &element(int i,int j) {
     return matrix_data.at( i*n +j );
   };
-  double& operator[](int i,int j) {
-    return element(i,j);
-  };
+// answer code removed
 };
   
 int main() {

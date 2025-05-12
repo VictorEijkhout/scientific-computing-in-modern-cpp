@@ -25,19 +25,7 @@ int main() {
 
   cout << "Decode\n";
   {
-    uint8_t fiftyseven_bcd = 0b0101'0111;
-    cout << "packed fiftyseven: " << fiftyseven_bcd << '\n';
-    cout << "packed fiftyseven: " << static_cast<int>( fiftyseven_bcd ) << '\n';
-
-    bitset<8> fiftyseven_bits( fiftyseven_bcd );
-    cout << "fiftyseven bits: " << fiftyseven_bits << '\n';
-
-    bitset<8> fourbits(15);
-    auto seven_bits = fiftyseven_bits & fourbits;
-    cout << "low byte: " << seven_bits << " = " << seven_bits.to_ulong() << '\n';
-  
-    auto five_bits = (fiftyseven_bits>>4) & fourbits;
-    cout << "high byte: " << five_bits << " = " << five_bits.to_ulong() << '\n';
+// answer code removed
   }
 
   cout << "Encode\n";

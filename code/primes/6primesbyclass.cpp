@@ -2,7 +2,7 @@
  ****
  **** This file belongs with the course
  **** Introduction to Scientific Programming in C++/Fortran2003
- **** copyright 2016-2023 Victor Eijkhout eijkhout@tacc.utexas.edu
+ **** copyright 2016-2025 Victor Eijkhout eijkhout@tacc.utexas.edu
  ****
  **** primesbyfunction.cxx : print a user specified quantity of primes
  **** this builds on primesbyglobal.cxx
@@ -29,16 +29,7 @@ public:
     }
     return true;
   };
-  int nextprime() {
-    while (!isprime(currentnumber)) {
-      ++currentnumber;
-    }
-    ++numberfound;
-    return currentnumber++;
-  };
-  int number_of_primes_found() {
-    return numberfound;
-  };
+// answer code removed
 };
 
 int main() {

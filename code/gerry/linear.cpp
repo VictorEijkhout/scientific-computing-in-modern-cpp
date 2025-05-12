@@ -36,7 +36,20 @@ public:
   // construct explicit population
   Population( vector<Voter> population,bool trace=false )
     : population(population),trace(trace) {};
-// answer code removed
+  //codesnippet end
+  // construct from 0101 string
+  Population( string rds,bool trace=false )
+    : trace(trace) {
+    int voter_count{0};
+    for ( auto v : rds )
+      if (v=='-')
+        extend( Voter(voter_count++,-1) );
+      else if (v=='+')
+        extend( Voter(voter_count++,+1) );
+      else
+        cout << "Unrecognized affiliation marker <<" << v << ">>" << '\n';
+  };
+  // construct random population
 // answer code removed
     : population(vector<Voter>(population_size,Voter(0,-1))),trace(trace) {
     if (population_size<0) {
