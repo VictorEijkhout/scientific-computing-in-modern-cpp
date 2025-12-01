@@ -18,17 +18,13 @@ using std::complex;
 
 #include <concepts>
 
-//codesnippet newtconceptdef
 template<typename T>
 concept RealType = std::is_floating_point_v<T>;
-//codesnippet end
 
-//codesnippet newtconceptdecl
 template<RealType T>
 T f(T x);
 template<RealType T>
 T fprime(T x);
-//codesnippet end
 
 int main() {
 

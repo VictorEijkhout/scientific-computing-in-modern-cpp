@@ -28,7 +28,6 @@ T fprime(T x) { return static_cast<T>(2) * x; };
 
 int main() {
 
-  //codesnippet newtonconceptint
   // WRONG: this should not compile
   int i{5};
   while ( true ) {
@@ -37,7 +36,6 @@ int main() {
     if (std::abs(fi)<1.e-10 ) break;
     i = i - fi/fprime<int>(i);
   }
-  //codesnippet end
   
   return 0;
 }

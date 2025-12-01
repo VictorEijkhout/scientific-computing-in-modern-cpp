@@ -14,8 +14,6 @@ using std::cout;
 #include <string>
 using std::string;
 
-//codesnippet foosubx
 void bar( string s ) {
   cout << s;
 }
-//codesnippet end

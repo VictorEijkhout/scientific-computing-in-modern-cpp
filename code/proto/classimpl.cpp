@@ -9,9 +9,7 @@
  ****
  ****************************************************************/
 
-//codesnippet classheaderimpl
 #include "classheader.hpp"
 double something::dosomething(int i,char c) const {
   return 1.5d;
 }
-//codesnippet end

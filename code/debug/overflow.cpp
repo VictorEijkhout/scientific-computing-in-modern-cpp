@@ -16,7 +16,6 @@ using std::format;
 #include <print>
 using std::println;
 
-//codesnippet gdbshort
 void say(short int n) {
   println
     ("hello world {}",n);
@@ -33,4 +32,3 @@ int main() {
 
   return 0;
 }
-//codesnippet end

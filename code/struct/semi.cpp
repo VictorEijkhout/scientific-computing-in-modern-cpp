@@ -12,20 +12,16 @@
 using std::cin;
 using std::cout;
 
-//codesnippet semidef
 struct semiconductor {
   double p; double n; double phi;
 };
-//codesnippet end
 
-//codesnippet semiuse
 semiconductor model() {
   double p = 1.5;
   double n = 2.5;
   double phi = 3.5;
   return {.p=p, .n=n, .phi=phi};
 };
-//codesnippet end
 
 int main() {
 

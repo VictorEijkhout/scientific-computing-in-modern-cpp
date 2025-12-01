@@ -14,7 +14,6 @@ using std::cout;
 #include <print>
 using std::println;
 
-//codesnippet capthis1
 class trace {
 private:
   int i{314};
@@ -25,8 +24,6 @@ public:
     println("copy"); };
   ~trace() {
     println("destruct"); };
-  //codesnippet end
-  //codesnippet capthis2
   void testv() {
     println(" .. testing");
     [*this] () {
@@ -34,8 +31,6 @@ public:
     }();
     println(" .. done");
   };
-  //codesnippet end
-  //codesnippet capthis3
   void testr() {
     println(" .. testing");
     [this] () {
@@ -43,7 +38,6 @@ public:
     }();
     println(" .. done");
   };
-  //codesnippet end
 };
 
 int main() {

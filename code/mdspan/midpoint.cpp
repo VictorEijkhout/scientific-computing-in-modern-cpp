@@ -32,14 +32,12 @@ namespace mdx = KokkosEx;
 
 int main() {
 
-  //codesnippet mdspan4dmid
   vector<float> ar10203040(10*20*30*40);
   auto brick10203040 =
     md::mdspan< float,
                 md::extents<size_t,10,20,30,40> >
                     ( ar10203040.data() );
   auto midpoint = brick10203040[5,10,15,20];
-  //codesnippet end
 
   return 0;
 }

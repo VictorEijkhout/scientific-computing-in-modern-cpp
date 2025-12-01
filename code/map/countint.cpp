@@ -45,7 +45,6 @@ int main() {
   /*
    * Get the iterator of some keys that is present
    */
-  //codesnippet intcountfind
   for ( auto k : {4,5} ) {
     auto wherek = intcount.find(k);
     if (wherek==intcount.end())
@@ -55,7 +54,6 @@ int main() {
       println("found key: {}; has value {}",kk,vk);
     }
   }
-  //codesnippet end
 
   return 0;
 }

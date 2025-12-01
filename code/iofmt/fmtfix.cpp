@@ -19,11 +19,9 @@ using std::format;
 int main() {
 
   float x;
-  //codesnippet fmtfix
   float pi=3.14159f;
   for ( auto x : { 0.543f, 1.13f, -21.55f, 33.4f, 156.8f } )
     println("{0:8g} : {0:-7.2f}",x);
-  //codesnippet end
   
   return 0;
 }

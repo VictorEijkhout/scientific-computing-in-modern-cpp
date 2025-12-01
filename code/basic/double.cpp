@@ -22,7 +22,6 @@ using std::println;
 
 template< typename T >
 void print() {
-  //codesnippet doublelimits
   println("Bytes: {}",sizeof(T));
   println("Bits in mantissa: {}",
 	  limit<T>::digits);
@@ -30,7 +29,6 @@ void print() {
 	  limit<T>::min_exponent);
   println("Max exp: {}",
 	  limit<T>::max_exponent);
-  //codesnippet end
 #if 0
   println("Bytes: {}",sizeof(T));
   println("Bits in mantissa: {}",limit<T>::digits);

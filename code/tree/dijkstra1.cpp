@@ -70,7 +70,6 @@ public:
   auto back() { return levels.back(); };
 };
 
-//codesnippet dagunweight
 class Dag {
 private:
   vector<vector<int>> dag;
@@ -78,10 +77,7 @@ public:
   // Make Dag of `n' nodes, no edges for now.
   Dag( int n )
     : dag( vector<vector<int>>(n) ) {};
-  //codesnippet end
-  //codesnippet dagnodenbors
   const auto& neighbors( int i ) const { return dag.at(i); };
-  //codesnippet end
   void make_edges( int avg_degree ) {
     const int n = dag.size();
     assert( avg_degree>=0 and avg_degree<n );

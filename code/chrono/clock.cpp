@@ -20,7 +20,6 @@ using namespace std::chrono;
 
 int main() {
 
-  //codesnippet clocksleep
   using myclock = system_clock;
   myclock::time_point before =
     myclock::now();
@@ -31,7 +30,6 @@ int main() {
        << duration_cast<milliseconds>
             (after-before).count()
        << "ms\n";
-  //codesnippet end
 
   return 0;
 }

@@ -14,13 +14,11 @@
 #include <cmath>
 #include "geolib.hpp"
 
-//codesnippet nameimpl
 namespace geometry {
   point::point( double x,double y ) {
       xcoord = x; ycoord = y; };
   double point::dx( point other ) {
     return other.xcoord-xcoord; };
-//codesnippet end
   double point::dy( point other ) {
     return other.ycoord-ycoord; };
   segment::segment( point from,point to) 
@@ -30,12 +28,10 @@ namespace geometry {
       dx = to.dx(from), dy = to.dy(from);
     return std::sqrt( dx*dx + dy*dy );
   };
-//codesnippet nameimpl
   template< typename T >
   vector<T>::vector( std::string name,int size )
     : name_(name),std::vector<T>::vector(size) {};
 }
-//codesnippet end
 
 template class geometry::vector<float>;
 template class geometry::vector<double>;

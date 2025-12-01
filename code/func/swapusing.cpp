@@ -8,7 +8,6 @@
  ****
  ****************************************************************/
 
-//codesnippet swapusing
 #include <iostream>
 using std::cout;
 
@@ -20,4 +19,3 @@ int main() {
   cout << i << '\n';
   return 0;
 }
-//codesnippet end

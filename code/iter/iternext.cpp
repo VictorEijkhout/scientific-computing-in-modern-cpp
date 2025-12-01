@@ -25,7 +25,6 @@ int main() {
 
   {
     cout << "PlusMinus\n";
-    //codesnippet iterplusminusnext
     vector<int> counts{1,2,3,4};
     auto second = counts.begin();
     second = std::next(second);
@@ -33,7 +32,6 @@ int main() {
     auto last = counts.end();
     last = std::prev(last);
     cout << "Last element: " << *last << '\n';
-    //codesnippet end
     cout << "plusminus\n";
   }
 

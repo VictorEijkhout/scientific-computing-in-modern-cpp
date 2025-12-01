@@ -13,36 +13,28 @@ using std::cin, std::cout;
 #include <iomanip>
 using std::scientific, std::setw, std::setprecision;
 
-//codesnippet conceptint
 #include <type_traits>
 template<typename T>
 concept Integral = std::is_integral_v<T>;
-//codesnippet end
 
-//codesnippet conceptgcd0
 template <typename T>
 requires Integral<T>
 T gcd0( T a, T b ) {
   if (b==0) return a;
   else return gcd0(b,a%b);
 }
-//codesnippet end
 
-//codesnippet conceptgcd1
 template <Integral T>
 T gcd1( T a, T b ) {
   if (b==0) return a;
   else return gcd1(b,a%b);
 }
-//codesnippet end
 
-//codesnippet conceptgcd2
 Integral auto gcd
     ( Integral auto a, Integral auto b ) {
   if (b==0) return a;
   else return gcd(b,a%b);
 }
-//codesnippet end
 
 // this comes from ChatGPT and seems wrong
 template<typename T>
@@ -62,7 +54,6 @@ PositiveIntegral auto positive_gcd
 
 int main() {
 
-  //codesnippet conceptgcdcall
   int i=27,j=30;
   cout << "gcd(27,30)="
        << gcd(i,j) << '\n';
@@ -72,7 +63,6 @@ int main() {
        << gcd(ii,jj) << '\n';
   // WRONG: DOES NOT COMPILE
   // gcd(27.1,30.2);
-  //codesnippet end
 
   positive_gcd(-27,30);
 

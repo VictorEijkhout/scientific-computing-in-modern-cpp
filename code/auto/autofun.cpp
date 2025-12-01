@@ -12,11 +12,9 @@
 using std::cin;
 using std::cout;
 
-//codesnippet autofun
 auto equal(int i,int j) {
   return i==j;
 };
-//codesnippet end
 
 int main() {
 

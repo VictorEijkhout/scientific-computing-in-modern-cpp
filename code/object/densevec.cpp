@@ -18,7 +18,6 @@ using std::vector;
 
 #include "virtualvec.hpp"
 
-//codesnippet virtfuncdense
 class DenseVector : VirtualVector {
 private:
   vector<float> values;
@@ -26,8 +25,6 @@ public:
   DenseVector( int size ) {
     values = vector<float>(size,0);
   };
-//codesnippet end
-//codesnippet virtfuncdensemethod
   void setlinear( float v ) {
     for (int i=0; i<values.size(); ++i)
       values[i] = i*v;
@@ -36,13 +33,10 @@ public:
     return values[i];
   };
 };
-//codesnippet end
 
 int main() {
-  //codesnippet virtfuncmain
   DenseVector v(5);
   v.setlinear(7.2);
   println("{:.3}",v[3]);
-  //codesnippet end
   return 0;
 }

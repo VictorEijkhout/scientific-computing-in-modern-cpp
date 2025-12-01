@@ -30,7 +30,6 @@ int main() {
 
   cout << "Encode\n";
   {
-    //codesnippet bcdencode
     uint8_t five{5}, seven{7};
     bitset<8> low_byte{seven};
     bitset<8> high_byte = ( bitset<8>{five} )<<4;
@@ -42,7 +41,6 @@ int main() {
     cout << "fiftyseven bits:\n  "
          << fiftyseven_bits << " = "
          << fiftyseven_bcd << '\n';
-    //codesnippet end
   }
   cout << " .. encode\n";
 

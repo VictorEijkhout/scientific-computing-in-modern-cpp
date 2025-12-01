@@ -23,14 +23,12 @@ public:
 
 int main() {
 
-  //codesnippet shareptr0
   cout << "Outside\n";
   {
     thing x;
     cout << "create done\n";
   }
   cout << "back outside\n";
-  //codesnippet end
 
 #if 0
   // alternatively

@@ -14,13 +14,11 @@ using std::cout;
 #include <vector>
 using std::vector;
 
-//codesnippet constcast
 void old_c_routine( float*in,float*out );
 void new_cpp_routine( const vector<float>&in, vector<float>&out ) {
   old_c_routine
     ( const_cast<float*>( in.data() ), out.data() );
 };
-//codesnippet end
 
 int main() {  
   return 0;

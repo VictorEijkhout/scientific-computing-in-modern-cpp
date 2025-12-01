@@ -86,14 +86,12 @@ int main( int argc,char **argv ) {
   Vector<real> x(matrix_size),y(matrix_size);
   x.set(1.);
   tstart = clock::now();
-  //codesnippet crspowerit
   real nrm;
   for ( int iteration=0; iteration<1000; ++iteration ) {
     mat.times(x,y);
     nrm = y.norm2();
     x.scale( 1./nrm,y );
   }
-  //codesnippet end
   auto iteration = clock::now()-tstart;
 
   auto millisec_duration = std::chrono::duration_cast<std::chrono::milliseconds>(creation);

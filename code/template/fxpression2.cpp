@@ -16,40 +16,30 @@ using std::cout;
 
 int main() {
 
-  //codesnippet ftempvecadd2
   Vector one(10,1),two(10,2);
   Vector three(10);
   three = one+two;
   cout << three.front() << ","
        << three.back() << '\n';
-  //codesnippet end
 
   return 0;
 }
 
-//codesnippet ft2opplus
 VectorSum operator+( const Vector& one, const Vector& other ) {
   return VectorSum( one,other );
 };
-//codesnippet end
 
-//codesnippet ft2assign
 void Vector::operator=( const VectorSum& ops ) {
   Vector sum( size() );
   for ( size_t i=0; i<size(); ++i )
     (*this)[i] = ops[i];
 };
-//codesnippet end
 
-//codesnippet ft2sumconstruct
 VectorSum::VectorSum
     ( const Vector& one,const Vector& two )
   : one(one),two(two) {};
-//codesnippet end
 
-//codesnippet ft2result
 float VectorSum::operator[]( size_t i ) const {
   return one[i]+two[i];
 };
-//codesnippet end
 

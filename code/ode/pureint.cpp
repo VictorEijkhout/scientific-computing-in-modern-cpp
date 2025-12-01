@@ -23,12 +23,10 @@ using std::vector;
 int main() {
 
   {
-    //codesnippet integratefwd
     double stepsize = .01;
     auto integrate_linear =
       ForwardIntegrator( [] (double x) { return x*x; }, stepsize );
     double int1 = integrate_linear.to(1.);
-    //codesnippet end
     double int2 = integrate_linear.to(2.);
     cout << "to 1: " << int1 << ", to 2: " << int2 << '\n';
   }

@@ -26,20 +26,16 @@ namespace rng = std::ranges;
 int main()
 {
   {
-    //codesnippet minelement
     vector<float> elements{.5f,1.f,1.5f};
     auto min_iter = std::min_element
       (elements.begin(),elements.end());
     cout << "Min: " << *min_iter << '\n';
-    //codesnippet end
   }
   {
-    //codesnippet minelementr
     vector<float> elements{.5f,1.f,1.5f};
     auto min_iter =
       rng::min_element(elements);
     cout << "Min: " << *min_iter << '\n';
-    //codesnippet end
   }
   return 0;
 }

@@ -17,28 +17,22 @@ using std::format;
 #include <span>
 using std:: span;
 
-//codesnippet spanconst
 void uhoh( const span<float> vs ) {
   vs[0] = 1.;
 }
-//codesnippet end
 
-//codesnippet spanconstconst
 void read( const span<const float> vs ) {
   cout << vs[0];
   // NOT LEGAL:
   // vs[0] = 1.;
 }
-//codesnippet end
 
 int main() {
 
-  //codesnippet spanconstcall
   vector<float> v(20);
   span<float> vsub( v.data(),18 );
   uhoh( vsub );
   read( vsub );
-  //codesnippet end
 
   return 0;
 }

@@ -8,10 +8,8 @@
  ****
  ****************************************************************/
 
-//codesnippet lambdaclass
 #include <functional>
 using std::function;
-//codesnippet end
 
 #include <iostream>
 using std::cin;
@@ -26,7 +24,6 @@ using std::vector;
 using std::string;
 using std::to_string;
 
-//codesnippet lambdaclass
 class SelectedInts {
 private:
   vector<int> bag;
@@ -35,8 +32,6 @@ public:
   SelectedInts
       ( function< bool(int) > f ) {
     selector = f; };
-//codesnippet end
-//codesnippet lambdaclassmethods
   void add(int i) {
     if (selector(i))
       bag.push_back(i);
@@ -50,7 +45,6 @@ public:
     return s;
   };
 };
-//codesnippet end
 
 int main() {
 
@@ -63,7 +57,6 @@ int main() {
   //   " greater than 5: " << greaterthan5.size() << '\n';
   
   int divisor;
-  //codesnippet lambdaclassed
   println("Give a divisor: ");
   cin >> divisor; 
   println(".. divisor {}",divisor);
@@ -73,7 +66,6 @@ int main() {
   SelectedInts multiples( is_divisible );
   for (int i=1; i<50; ++i)
     multiples.add(i);
-  //codesnippet end
   println("Multiples of {}:",divisor);
   println("{}",multiples.as_string());
 

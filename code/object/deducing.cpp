@@ -28,12 +28,10 @@ public:
   auto& x() & { return x_; };
   auto& x() const & { return x_; };
 #else
-  //codesnippet deducingetter
   template<typename Self>
   auto& x(this Self&& self) { 
     return self.x_ ;
     };
-  //codesnippet end
     // return std::forward<Self>(self).x_; 
 #endif
 };

@@ -20,7 +20,6 @@ using std::vector;
 
 int main(int argc,char **argv) {
 
-  //codesnippet cxxoptn
   cxxopts::Options options
     ("cxxopts",
      "Commandline options demo");
@@ -39,7 +38,6 @@ int main(int argc,char **argv) {
   auto number_of_times = result["ntimes"].as<int>();
   cout << "number of times: "
        << number_of_times << '\n';
-  //codesnippet end
 
   return 0;
 }

@@ -17,7 +17,6 @@ using std::println;
 #include <memory>
 using std::unique_ptr;
 
-//codesnippet uniquear
 template< typename scalar >
 class container : private unique_ptr<scalar[]> {
   using allocated = unique_ptr<scalar[]>;
@@ -35,7 +34,6 @@ public:
     return (*this)[i];
   };
 };
-  //codesnippet end
 
 int main() {
   cout << "Copy\n";

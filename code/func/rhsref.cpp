@@ -13,7 +13,6 @@ using std::cout;
 #include <print>
 using std::println;
 
-//codesnippet rhsrefclass
 class myclass {
 private:
   int stored{0};
@@ -21,11 +20,9 @@ public:
   myclass(int i) : stored(i) {};
   int &data() { return stored; };
 };
-//codesnippet end
 
 int main() {
 
-  //codesnippet rhsref
   myclass obj(5);
   println("object data: {}",obj.data());
   int dcopy = obj.data();
@@ -40,7 +37,6 @@ int main() {
   auto &aref = obj.data();
   ++aref;
   println("object data: {}",obj.data());
-  //codesnippet end
 
   return 0;
 }

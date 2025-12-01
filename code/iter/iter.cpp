@@ -40,7 +40,6 @@ int main() {
 
   {
     cout << "Copy\n";
-    //codesnippet itercopy
     vector<int> counts{1,2,3,4};
     vector<int> copied(5);
     copy( counts.begin(),counts.end(),
@@ -48,38 +47,32 @@ int main() {
     cout << copied[0] 
          << ", " << copied[1]
          << ".." << copied[4] << '\n';
-    //codesnippet end
     cout << "copy\n";
   }
 
   {
     cout << "PlusMinus\n";
-    //codesnippet iterplusminus
     vector<int> counts{1,2,3,4};
     auto second = counts.begin(); ++second;
     cout << "Second element: " << *second << '\n';
     auto last = counts.end(); last--;
     cout << "Last element: " << *last << '\n';
-    //codesnippet end
     cout << "plusminus\n";
   }
 
   {
     cout << "Erase2\n";
-    //codesnippet vectorerase
     vector<int> counts{1,2,3,4,5,6};
     vector<int>::iterator second = counts.begin()+1;
     auto fourth = second+2;
     counts.erase(second,fourth);
     cout << counts[0]
          << "," << counts[1] << '\n';
-    //codesnippet end
     cout << "erase2\n";
   }
   
   {
     cout << "Insert2\n";
-    //codesnippet vectorinsert
     vector<int> counts{1,2,3,4,5,6},
       zeros{0,0};
     auto after_one = zeros.begin()+1;
@@ -92,13 +85,11 @@ int main() {
          << zeros[2] << ","
          << zeros[3]
          << '\n';
-    //codesnippet end
     cout << "insert2\n";
   }
   
   {
     cout << "Subvectorcopy" << '\n';
-    //codesnippet subvectorcopy
     vector<int> vec{11,22,33,44,55,66};
     auto second = vec.begin(); ++second;
     auto before = vec.end(); before--;
@@ -106,21 +97,17 @@ int main() {
     cout << "no first and last: ";
     for ( auto i : sub ) cout << i << ", ";
     cout << '\n';
-    //codesnippet end
     cout << ".. subvectorcopy" << '\n';
 
     cout << "Subvectornew" << '\n';
-    //codesnippet subvectornew
     vec.at(1) = 222;
     cout << "did we get a change in the sub vector? "
 	 << sub.at(0) << '\n';
-    //codesnippet end
     cout << ".. subvectornew" << '\n';
   }
 
   {
     cout << "Subvectorassign" << '\n';
-    //codesnippet subvectorcopy
     vector<int> vec{11,22,33,44,55,66};
     auto second = vec.begin(); ++second;
     auto before = vec.end(); before--;
@@ -133,13 +120,11 @@ int main() {
     for ( auto i : sub ) cout << i << ", ";
     cout << '\n';
     vec.at(1) = 222;
-    //codesnippet end
     cout << ".. subvector" << '\n';
   }
 
   {
     cout << "Subpointer" << '\n';
-    //codesnippet subpointer
     auto vec = shared_ptr<vector<int>>(new vector<int>{11,22,33,44,55,66});
     auto second = vec->begin(); ++second;
     auto before = vec->end(); before--;
@@ -151,12 +136,10 @@ int main() {
     cout << '\n';    
     vec->at(1) = 222;
     cout << "did we get a change in the sub vector? " << sub->at(0) << '\n';
-    //codesnippet end
     cout << ".. subpointer" << '\n';
   }
 
   {
-    //codesnippet iterderef
     vector<int> vec{11,22,33,44,55,66};
     auto second = vec.begin(); ++second;
     cout << "Dereference second: "
@@ -164,7 +147,6 @@ int main() {
     // DOES NOT COMPILE
     // the iterator is not a type-star:
     // int *subarray = second;
-    //codesnippet end  
   }
 
   return 0;

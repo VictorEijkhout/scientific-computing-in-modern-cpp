@@ -16,33 +16,26 @@ using std::vector;
 using std::pair;
 #include <cmath>
 
-//codesnippet rangecout
 #include <ranges>
 namespace rng = std::ranges;
 #include <algorithm>
-//codesnippet end
 
 int main()
 {
 
   int count;
 #if 0
-  //codesnippet rangedata
   vector<int> v{2,3,4,5,6,7};
-  //codesnippet end
 #endif
 
   cout << "Cout\n";
-  //codesnippet rangecout
   vector<int> v{2,3,4,5,6,7};
   rng::for_each
     ( v, [] (int i) { cout << i << " "; } );
-  //codesnippet end
   cout << '\n';
   cout << " .. cout\n";
 
   cout << "Count\n";
-  //codesnippet rangecount
   count = 0;
   rng::for_each
     ( v,
@@ -51,11 +44,9 @@ int main()
       );
   cout << "Under five: "
        << count << '\n';
-  //codesnippet end
   cout << " .. count\n";
 
   cout << "Drop\n";
-  //codesnippet rangedrop
   count = 0;
   rng::for_each
     ( v | rng::views::drop(1),
@@ -64,7 +55,6 @@ int main()
       );
   cout << "minus first: "
        << count << '\n';
-  //codesnippet end
   cout << " .. drop\n";
 
   count = 0;
@@ -74,25 +64,21 @@ int main()
   
   cout << "Transformi\n";
   {
-    //codesnippet transformi
   vector<float> in{1,2,3,4},out(4);
   std::transform
     ( in.begin(),in.end(), out.begin(),
       [] (float x ) { return std::sqrt(x); } );
   for ( auto x : out ) cout << x << '\n';
-    //codesnippet end
   }
   cout << " .. transformi\n";
 
   cout << "Transformr\n";
   {
-    //codesnippet transformr
   vector<float> in{1,2,3,4},out(4);
   for ( auto x : in 
         | rng::views::transform
 	  ( [] (float x ) { return std::sqrt(x); } ) )
     cout << x << '\n';
-    //codesnippet end
   }
   cout << " .. transformr\n";
 

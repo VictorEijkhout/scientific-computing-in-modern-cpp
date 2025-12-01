@@ -93,13 +93,10 @@ int main() {
   Dag graph(graph_size); graph.make_edges(4);
   cout << graph.as_string();
 
-  //codesnippet qlevsetup
   using node_info = std::pair<unsigned,unsigned>;
   std::set< node_info > distances;
   distances.insert( {0,0} );
-  //codesnippet end
 
-  //codesnippet qlevloop
   for (;;) {
     if (distances.size()==graph_size) break;
     /*
@@ -115,14 +112,11 @@ int main() {
          * See if `n' has a known distance,
          * if not, add to `distances' with level+1
          */
-        //codesnippet end
 // answer code removed
-          //codesnippet qlevloop
           {
             cout << "node " << n << " level " << level+1 << '\n';
             distances.insert( {n,level+1} );
           }
-        //codesnippet end
       }
     }
   }

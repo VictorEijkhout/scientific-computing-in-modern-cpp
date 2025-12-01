@@ -18,16 +18,13 @@ using std::cout;
 #include <complex>
 using std::complex;
 
-//codesnippet newtont0
 template<typename T>
 T f(T x) { return x*x - 2; };
 template<typename T>
 T fprime(T x) { return 2 * x; };
-//codesnippet end
 
 int main() {
 
-//codesnippet newtont0use
   double x{1.};
   while ( true ) {
     auto fx = f<double>(x);
@@ -35,7 +32,6 @@ int main() {
     if (std::abs(fx)<1.e-10 ) break;
     x = x - fx/fprime<double>(x);
   }
-//codesnippet end
   
   return 0;
 }

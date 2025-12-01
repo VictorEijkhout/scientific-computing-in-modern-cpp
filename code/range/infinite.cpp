@@ -31,7 +31,6 @@ namespace rng = std::ranges;
 int main()
 {
 
-  //codesnippet infeven
   auto even_numbers =
     rng::views::iota(0)
     | rng::views::filter
@@ -39,7 +38,6 @@ int main()
   for ( auto n : even_numbers
           | rng::views::take(10) )
     cout << n << '\n';
-  //codesnippet end
 
   return 0;
 }

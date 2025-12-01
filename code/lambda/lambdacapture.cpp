@@ -27,7 +27,6 @@ using std::to_string;
 int main() {
 
   cout << "Value\n";
-  //codesnippet lambdavalue
   int n;
   cin >> n;
   auto increment_by_n = 
@@ -37,13 +36,11 @@ int main() {
   println("{}",increment_by_n (5));
   println("{}",increment_by_n (12));
   println("{}",increment_by_n (25));
-  //codesnippet end
   cout << "value\n";
 
   int one=1;
   cout << "Constant\n";
   {
-    //codesnippet lambdaconstant
     int inc;
     cin >> inc;
     auto increment =
@@ -54,22 +51,18 @@ int main() {
     println("1 -> {}",increment(1));
     inc = 2*inc;
     println("1 -> {}",increment(1));
-    //codesnippet end
   }
   cout << "constant\n";
 
   cout << "Mutate\n";
-  //codesnippet lambdautate
   [one] ( int input ) -> void {
     // WRONG: does not compile:
     // one++;
     println("{}",input+one);
   } (5);
-  //codesnippet end
   cout << "mutate\n";
 
   cout << "Reference\n";
-  //codesnippet lambdareference
   int stride = 1;
   auto more_and_more = 
     [&stride] ( int input ) -> void {
@@ -82,7 +75,6 @@ int main() {
   more_and_more(8);
   more_and_more(9);
   println("stride is now: {}",stride);
-  //codesnippet end
   cout << "reference\n";
 
   // capture everything by value

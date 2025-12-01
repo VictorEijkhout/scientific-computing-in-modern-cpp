@@ -19,7 +19,6 @@ using namespace std;
 
 int main() {
 
-  //codesnippet nanhasnan
   println("Double NaNs: {} {}",
       std::numeric_limits<double>
 	  ::quiet_NaN(),
@@ -30,7 +29,6 @@ int main() {
   println("Int has NaN: {}",
       std::numeric_limits<int>
 	  ::has_quiet_NaN);
-  //codesnippet end
 #if 0
   cout << "Double NaNs: "
        << std::numeric_limits<double>

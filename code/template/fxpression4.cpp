@@ -19,7 +19,6 @@ class Vector; // forward definition
 /*
  * Operators
  */
-//codesnippet ft4summulimpl
 template< typename ONE,typename TWO >
 class sum {
 public:
@@ -32,7 +31,6 @@ public:
   float operator()( ONE one,TWO two,size_t i ) const {
     return one[i]*two; };
 };
-//codesnippet end
 
 template< typename ONE,typename TWO,typename EVAL >
 class VectorExpr {
@@ -55,7 +53,6 @@ auto operator*( const VectorExpr<ONE,TWO,EVAL>& one, float factor ) {
 };
 
 //  For the next two to be auto, it has to come before any use
-//codesnippet ft4summulop
 template< typename ONE,typename TWO >
 auto operator+( const ONE& one, const TWO& other ) {
   return VectorExpr< ONE,TWO,sum<ONE,TWO> >(one,other);
@@ -65,7 +62,6 @@ template< typename ONE,typename TWO >
 auto operator*( const ONE& one, const TWO& other ) {
   return VectorExpr< ONE,TWO,mul<ONE,TWO> >(one,other);
 };
-//codesnippet end
 
 class Vector : public vector<float> {
 private:
@@ -77,13 +73,11 @@ public:
   void operator=( const VectorExpr<ONE,TWO,EVAL>& ops );
 };
 
-//codesnippet ft4assign
 template< typename ONE,typename TWO,typename EVAL >
 void Vector::operator=( const VectorExpr<ONE,TWO,EVAL>& ops ) {
   for ( size_t i=0; i<size(); ++i )
     (*this)[i] = ops[i];
 };
-//codesnippet end
 
 
 
@@ -110,10 +104,8 @@ int main() {
   return 0;
 }
 
-//codesnippet ft4eval
 template< typename ONE,typename TWO,typename EVAL >
 float VectorExpr<ONE,TWO,EVAL>::operator[]( size_t i ) const {
   return EVAL()(one,two,i);
 };
-//codesnippet end
 

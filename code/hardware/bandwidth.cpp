@@ -80,7 +80,6 @@ int main(int argc,char **argv) {
   try {
     auto start_time = Clock::now();
     vector<std::uintptr_t> offsets(nthreads);
-    //codesnippet bandwidththreads
     vector<real> results(nthreads,0.);
     float bw{0};
     uint64_t data_stream_size{0};
@@ -96,7 +95,6 @@ int main(int argc,char **argv) {
       }
       bw += how_many_repeats * thread_data_stream.size()*sizeof(real);
     }
-    //codesnippet end
     int microsec_duration = compute_microsec_duration(start_time);
     cout << format("runtime: {} msec\n",microsec_duration);
     float bandwidth_in_gig_per_sec = ( bw * 1.e-9 ) / ( microsec_duration * 1.e-6 );

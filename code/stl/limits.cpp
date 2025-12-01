@@ -25,7 +25,6 @@ int main() {
   int lasttest;
 
   cout << "Limit" << '\n';
-  //codesnippet stllimits
   cout << "Signed int: "
        << numeric_limits<int>::min() << " "
        << numeric_limits<int>::max()
@@ -44,11 +43,9 @@ int main() {
        << numeric_limits<double>::min() << " "
        << numeric_limits<double>::max()
        << '\n';
-  //codesnippet end
   cout << ".. limit" << '\n';
 
   cout << "Macheps" << '\n';
-  //codesnippet stllimitfloat
   println("Single lowest {}",
       numeric_limits<float>::lowest());
   println(" .. and epsilon {}",
@@ -57,7 +54,6 @@ int main() {
       numeric_limits<double>::lowest());
   println(" .. and epsilon {}",
       numeric_limits<double>::epsilon());
-  //codesnippet end
   cout << ".. macheps" << '\n';
 #if 0
   cout << "Single lowest "

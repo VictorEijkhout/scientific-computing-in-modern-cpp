@@ -35,9 +35,7 @@ using std::pair;
 #include <vector>
 using std::vector;
 
-//codesnippet vt100home
 #include <cstdio>
-//codesnippet end
 #include <unistd.h>
 
 #include "cxxopts.hpp"
@@ -70,9 +68,7 @@ public:
     for ( auto [i,j] : permuted_indices( trash_f * (iSize*jSize) )  )
       cell(i,j) = occupy::trash;
     for ( auto [i,j] : permuted_indices( turtle_f* (iSize*jSize) ) )
-      //codesnippet turtlename
       cell(i,j) = occupy::turtle;
-      //codesnippet end
   };
   int index( int i,int j ) const { return i*jSize+j; };
   occupy cell( int i,int j ) const { return ocean_.at(index(i,j)); };
@@ -102,7 +98,6 @@ public:
     return pair<int,int>(-1,-1);
   };
 
-  //codesnippet countnbrs
   int count_around( int ic,int jc,occupy typ ) const {
     int count=0;
     for ( auto [i,j] : neighbors(ic,jc) ) {
@@ -111,7 +106,6 @@ public:
     }
     return count;
   };
-  //codesnippet end
 
   optional< pair<int,int> > random_neighbor(int i,int j,occupy typ,double p=0.) const {
     if ( int count = count_around(i,j,typ); count==0 )
@@ -225,10 +219,8 @@ public:
   }
 
   void trace_view() const {
-    //codesnippet vt100home
     // ESC [ i ; j H
     printf( "%c[0;0H",(char)27);
-    //codesnippet end
     const int hs=3;
     // top numbering
     cout << "  "; for ( int j=0; j<jSize; ++j ) cout << setw(hs) << j%10; cout << '\n';

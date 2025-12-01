@@ -31,7 +31,6 @@ using std::visit;
 
 #include "quadlib.hpp"
 
-//codesnippet qtestdiscriminant
 TEST_CASE( "discriminant" ) {
   quadratic one{0., 2.5, 0.};
   REQUIRE( discriminant( one ) ==Catch::Approx(6.25) );
@@ -40,7 +39,6 @@ TEST_CASE( "discriminant" ) {
   quadratic three{.1, .1, .1*.5};
   REQUIRE( discriminant( three ) ==Catch::Approx(-.01) );
 }
-//codesnippet end
 
 // in the previous test,
 // try also this:
@@ -68,17 +66,13 @@ TEST_CASE( "D = 0" ) {
     REQUIRE( c>5. );
   }
   INFO( msg );
-  //codesnippet qtestdzero
   quadratic coefficients{a,b,c};
   d = discriminant( coefficients );
   z = discriminant_zero( coefficients );
   INFO( a << "," << b << "," << c << " d=" << d );
   REQUIRE( z );
-  //codesnippet end
-  //codesnippet qtestsimple
   auto r = simple_root(coefficients);
   REQUIRE( evaluate(coefficients,r)==Catch::Approx(0.).margin(1.e-14) );
-  //codesnippet end
   //  REQUIRE( evaluate(coefficients,r) ==Catch::Approx(0.) );
 }
 
@@ -100,7 +94,6 @@ TEST_CASE( "double root" ) {
   SECTION( "(x-1)(x-3)" ) {
     a=1; b=-4; c=3;
   }
-  //codesnippet qtestdouble
   quadratic coefficients{a,b,c};
   auto [r1,r2] = double_root(coefficients);
   auto
@@ -108,10 +101,8 @@ TEST_CASE( "double root" ) {
     e2 = evaluate(coefficients,r2);
   REQUIRE( evaluate(coefficients,r1)==Catch::Approx(0.).margin(1.e-14) );
   REQUIRE( evaluate(coefficients,r2)==Catch::Approx(0.).margin(1.e-14) );
-  //codesnippet end
 }
 
-//codesnippet qtestfull
 TEST_CASE( "full test" ) {
   double a,b,c; int index;
   SECTION( "no root" ) {
@@ -130,4 +121,3 @@ TEST_CASE( "full test" ) {
   auto result = compute_roots(coefficients);
   REQUIRE( result.index()==index );
 }
-//codesnippet end

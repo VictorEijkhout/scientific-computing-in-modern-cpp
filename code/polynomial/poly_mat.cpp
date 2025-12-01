@@ -33,14 +33,12 @@ public:
   mat( double x ) {
     a[0][0] = x; a[1][1] = x;
   };
-  //codesnippet polymatopsdecl
   mat operator+( const mat& other ) const;
   void operator+=( const mat& other );
   mat operator*( const mat& other ) const;
   mat operator*( double other ) const;
   void operator*=( const mat& other );
   void operator*=( double other );
-  //codesnippet end
   double value() const { return a[0][0]; };
 };
 
@@ -49,7 +47,6 @@ std::ostream &operator<<( std::ostream &os,const mat &m ) {
   return os;
 };
 
-//codesnippet polymatclass
 template< typename Scalar >
 class polynomial {
 private:
@@ -65,7 +62,6 @@ public:
 	     [x,&y] (double c) { y *= x; y += c; } );
     return y;
   };
-  //codesnippet end
   Scalar operator()(Scalar x) const { return eval(x); };
   polynomial operator+( const polynomial &other ) const {
     vector<double> newcoeff( std::max(degree()+1,other.degree()+1),0. );
@@ -84,13 +80,11 @@ public:
 int main() {
 
   {
-    //codesnippet temppolydouble
     polynomial<double> x2p2( {2., 0., 1.} );
     for ( auto x : {1., 2., 3.} ) {
       auto y = x2p2(x);
       cout << "Second power of x=" << x << " plus 2 gives y=" << y << '\n';
     }
-    //codesnippet end
     polynomial<double> x2( {0., 2.} );
     polynomial<double> x2x2 = x2p2 + x2; // x^2 + 2x + 2
     //  cout << "sum polynomnial: " << x2x2.render() << '\n';
@@ -101,13 +95,11 @@ int main() {
   }
 
   {
-    //codesnippet temppolymat
     polynomial<mat> x2p2( {2., 0., 1.} );
     for ( auto x : {1., 2., 3.} ) {
       auto y = x2p2(x);
       cout << "Second power of x=" << x << " plus 2 gives y=" << y << '\n';
     }
-    //codesnippet end
     polynomial<mat> x2( {0., 2.} );
     polynomial<mat> x2x2 = x2p2 + x2; // x^2 + 2x + 2
     //  cout << "sum polynomnial: " << x2x2.render() << '\n';

@@ -14,29 +14,23 @@ using std::cout;
 
 #include <random>
 
-//codesnippet nonrandomint
 int nonrandom_int(int max) {
   std::default_random_engine engine;
   std::uniform_int_distribution<>
     ints(1,max);
   return ints(engine);
 };
-//codesnippet end
 
-//codesnippet truerandomint
 int realrandom_int(int max) {
   static  std::default_random_engine static_engine;
   std::uniform_int_distribution<>
     ints(1,max);
   return ints(static_engine);
 };
-//codesnippet end
 
 int main() {
 
-  //codesnippet nonrandomint
   // call `nonrandom_int' three times
-  //codesnippet end
   cout << "== Nonrandom\n";
   cout << "Three ints: "
        << nonrandom_int(100) << ", "

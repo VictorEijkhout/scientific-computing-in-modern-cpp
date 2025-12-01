@@ -47,7 +47,6 @@ void Vector<scalar>::set( scalar value ) {
     elements[i] = value;
 };
 
-//codesnippet crsvectornormdecl
 template< typename scalar >
 scalar Vector<scalar>::norm2() const {
   scalar s=static_cast<scalar>(0);
@@ -55,7 +54,6 @@ scalar Vector<scalar>::norm2() const {
     s += e*e;
   return std::sqrt(s);
 };
-//codesnippet end
 
 /*
  * CRS Matrix class
@@ -108,7 +106,6 @@ void CRSMatrix<scalar>::scale( scalar factor ) {
   }
 };
 
-//codesnippet crsmatmult
 template< typename scalar >
 void CRSMatrix<scalar>::times( const Vector<scalar>& in,Vector<scalar>& out ) const {
   for ( idxint row=0; row<out.size(); ++row ) {
@@ -125,7 +122,6 @@ void CRSMatrix<scalar>::times( const Vector<scalar>& in,Vector<scalar>& out ) co
     out[row] = s;
   }
 };
-//codesnippet end
 
 template class Vector<float>;
 template class Vector<double>;

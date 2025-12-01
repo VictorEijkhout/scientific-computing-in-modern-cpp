@@ -10,7 +10,6 @@
 
 #include <functional>
 using std::function;
-//codesnippet end
 
 #include <iostream>
 using std::cin;
@@ -33,14 +32,11 @@ int main() {
 
   bool foo;
 #if 0
-  //codesnippet invokewrong
   if (foo)
     MyClass x(5,5);
   else
     MyClass x("foo");
-  //codesnippet end
 #else
-  //codesnippet invokeright
   auto x = 
     [foo] () {
       if (foo)
@@ -48,7 +44,6 @@ int main() {
       else
         return MyClass("foo");
     }();
-  //codesnippet end
 #endif
 
   return 0;

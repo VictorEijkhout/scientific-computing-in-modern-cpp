@@ -31,7 +31,6 @@ public:
   double_object( double x ) : x(x) {};
   auto value() { return x; };
 };
-//codesnippet stringobjectclass
 class string_object {
 private:
   string s;
@@ -39,11 +38,9 @@ public:
   string_object( string s );
   string value();
 };
-//codesnippet end
 string_object::string_object(string s) : s(s) {};
 string_object::string value() { return s; };
 
-//codesnippet stringerclass
 class stringer {
 public:
   string operator()
@@ -55,9 +52,7 @@ public:
       ( string_object s ) {
     return s.value(); };
 };
-//codesnippet end
 
-//codesnippet sizerclass
 class sizer {
 public:
   int operator()
@@ -67,17 +62,13 @@ public:
       ( string_object s ) {
     return s.value().size(); };
 };
-//codesnippet end
 
 int main() {
 
-  //codesnippet sizeruse
   variant<double_object,string_object>
     union_is_double{ double_object(2.5) },
     union_is_string{ string{"two-point-five"} };
-  //codesnippet end
 
-  //codesnippet sizervisit
   cout << "Size of <<" 
        << visit( stringer{},union_is_double )
        << ">> is " 
@@ -88,7 +79,6 @@ int main() {
        << ">> is " 
        << visit( sizer{},union_is_string )
        << '\n';
-  //codesnippet end
 
   return 0;
 }

@@ -11,7 +11,6 @@
 #include <iostream>
 using std::cout;
 
-//codesnippet store2class
 template< typename T >
 class Store {
 private:
@@ -22,7 +21,6 @@ public:
   Store copy() const;
   Store<T> negative() const;
 };
-//codesnippet end
 
 int main() {
 
@@ -38,7 +36,6 @@ int main() {
   return 0;
 }
 
-//codesnippet store2methods
 template< typename T >
 Store<T>::Store(T v) : stored(v) {};
 
@@ -50,4 +47,3 @@ Store<T>  Store<T>::copy() const { return Store<T>(stored); };
 
 template< typename T >
 Store<T> Store<T>::negative() const { return Store<T>(-stored); };
-//codesnippet end

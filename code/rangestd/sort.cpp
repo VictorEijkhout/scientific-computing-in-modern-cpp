@@ -34,7 +34,6 @@ int main()
 {
 
   cout << "ItSort\n";
-  //codesnippet iteratorsort
   vector<int> v{3,1,2,4,5,7,9,11,12,8,10};
   cout << "Original vector: "
        << vector_as_string(v) << '\n';
@@ -43,7 +42,6 @@ int main()
   std::sort( v_std.begin(),v_std.begin()+5 );
   cout << "Five elements sorts: "
        << vector_as_string(v_std) << '\n';
-  //codesnippet end
   cout << "itsort\n";
 
   auto v_range(v);
@@ -51,12 +49,10 @@ int main()
 
   {
     cout << "RngSort\n";
-    //codesnippet rngsort
     vector<int> v{3,1,2};
     rng::sort(v);
     for ( auto e : v )
       cout << e << '\n';
-    //codesnippet end
     cout << " .. rngsort\n";
   }
 

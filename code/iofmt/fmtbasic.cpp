@@ -22,7 +22,6 @@ using std::string;
 
 int main() {
 
-  //codesnippet fmtbasic
   println("{}",2);
   string hello_string = format
     ("{} {}!","Hello","world");
@@ -30,7 +29,6 @@ int main() {
   println
     ("{0}, {0} {1}!",
      "Hello","world");
-  //codesnippet end
 
   return 0;
 }

@@ -41,7 +41,6 @@ int main() {
             ( [] (double x) { return x*x-2; }, .001,.5 )
        << '\n';
 
-  //codesnippet newtonfunfuntuse
   cout << "sqrt -2 = " <<
     newton_root<complex<double>>
     ( // objective function
@@ -54,7 +53,6 @@ int main() {
       complex<double>{.1,.1}
       )
        << '\n';
-  //codesnippet end
 
   cout << "sqrt -2 = " <<
        newton_root<complex<double>>

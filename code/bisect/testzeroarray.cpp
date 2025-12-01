@@ -22,13 +22,11 @@ using std::vector;
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch_all.hpp"
 
-//codesnippet rootproperpoly
 TEST_CASE( "coefficients represent polynomial" "[1]") {
   vector<double> coefficients = { 1.5, 0., -3 };
   REQUIRE( coefficients.size()>0 );
   REQUIRE( coefficients.front()!=0. );
 }
-//codesnippet end
 
 // answer code removed
 

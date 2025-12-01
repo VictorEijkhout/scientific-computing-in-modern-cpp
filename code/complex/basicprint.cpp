@@ -16,7 +16,6 @@ using std::println;
 #include <complex>
 using std::complex;
 
-//codesnippet printcomplexfloat
 template<>
 class std::formatter<complex<float>>{
 public:
@@ -27,7 +26,6 @@ public:
       ( ctx.out(),"({},{})",z.real(),z.imag());
   };
 };
-//codesnippet end
 
 template<>
 class std::formatter<complex<double>>{
@@ -43,23 +41,19 @@ public:
 int main() {
 
   cout << "Def\n";
-  //codesnippet complexdef
   complex<double> d(1.,3.);
   println("{}",d);
   complex<float> f;
   f.real(1.); f.imag(2.);
   println("{}",f);
-  //codesnippet end
   cout << " .. def\n";
   
   cout << "Ops\n";
-  //codesnippet complexops
   using namespace std::complex_literals;
   auto e = d*2.;
   println("{}",e); 
   auto g = e + 2.5i + 3.; // note 3dot
   println("{}",g); 
-  //codesnippet end
   cout << " .. ops\n";
 
   return 0;

@@ -22,7 +22,6 @@ using std::vector;
 #define CATCH_CONFIG_MAIN
 #include "catch2/catch_all.hpp"
 
-//codesnippet zeroclasspoly2
 TEST_CASE( "proper test","[2]" ) {
   vector<double> coefficients{3., 2.5, 2.1};
   REQUIRE_NOTHROW( polynomial(coefficients) );
@@ -30,19 +29,15 @@ TEST_CASE( "proper test","[2]" ) {
   coefficients.at(0) = 0.;
   REQUIRE_THROWS( polynomial(coefficients) );
 }
-//codesnippet end
 
-//codesnippet zeroclasspolyodd
 TEST_CASE( "polynomial degree","[3]" ) {
   polynomial second( {2,0,1} ); // 2x^2 + 1
   REQUIRE( not second.is_odd() );
   polynomial third( {3,2,0,1} ); // 3x^3 + 2x^2 + 1
   REQUIRE( third.is_odd() );
 }
-//codesnippet end
 
 TEST_CASE( "polynomial evaluation" ) {
-  //codesnippet zeroclasspolyeval
   polynomial second( {2,0,1.1} ); 
   // correct interpretation: 2x^2 + 1.1
   REQUIRE( second.evaluate_at(2) == Catch::Approx(9.1) );
@@ -50,21 +45,17 @@ TEST_CASE( "polynomial evaluation" ) {
   REQUIRE( second.evaluate_at(2) != Catch::Approx(6.4) );
   polynomial third( {3,2,0,1} ); // 3x^3 + 2x^2 + 1
   REQUIRE( third(0) == Catch::Approx(1) );
-  //codesnippet end
 }
 
 TEST_CASE( "polynomial evaluation through functor" ) {
-  //codesnippet zeroclasspolyeval1
   polynomial second( {2,0,1.1} ); 
   // correct interpretation: 2x^2 + 1.1
   REQUIRE( second(2) == Catch::Approx(9.1) );
   polynomial third( {3,2,0,1} ); // 3x^3 + 2x^2 + 1
   REQUIRE( third(0) == Catch::Approx(1) );
-  //codesnippet end
 }
 
 TEST_CASE( "initial bounds" ) {
-  //codesnippet rootcatchouter
   double left{10},right{11};
   right = left+1;
   polynomial second( {2,0,1} ); // 2x^2 + 1
@@ -76,7 +67,6 @@ TEST_CASE( "initial bounds" ) {
     leftval = third(left),
     rightval = third(right);
   REQUIRE( leftval*rightval<=0 );
-  //codesnippet end
 }
 
 TEST_CASE( "move bounds closer" ) {
@@ -86,7 +76,6 @@ TEST_CASE( "move bounds closer" ) {
   double
     leftval = third(left), rightval = third(right);
   REQUIRE( leftval*rightval<=0 );
-  //codesnippet bisectmoveboundstest
   REQUIRE_THROWS( move_bounds_closer(third,right,left) );
   REQUIRE_THROWS( move_bounds_closer(third,left,left) );
 
@@ -96,7 +85,6 @@ TEST_CASE( "move bounds closer" ) {
   REQUIRE( leftval*rightval<=0 );
   REQUIRE( ( ( left==old_left and right<old_right ) or
 	     ( right==old_right and left>old_left ) ) );
-  //codesnippet end
 }
 
 TEST_CASE( "test zero finder", "[7]" ) {

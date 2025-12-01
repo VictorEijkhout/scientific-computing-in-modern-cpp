@@ -20,7 +20,6 @@ public:
 
 void pointwisemult( const Vector& d,const Vector& in,Vector& out ) {};
 
-//codesnippet matfuncinherit
 class Matrix {
 public:
   Matrix();
@@ -45,6 +44,5 @@ int main() {
   m.multiply(invector,outvector);
   return 0;
 };
-//codesnippet end
 
 Matrix::Matrix() {};

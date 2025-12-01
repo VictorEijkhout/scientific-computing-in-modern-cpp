@@ -15,7 +15,6 @@ using std::println;
 #include <sstream>
 #include <cmath>
 
-//codesnippet virtualbase
 class Base {
 protected:
   int i;
@@ -23,9 +22,7 @@ public:
   Base(int i) : i(i) {};
   virtual int thevalue() { return i; };
 };
-//codesnippet end
 
-//codesnippet virtualderiv
 class Deriv : public Base {
 public:
   Deriv(int i) : Base(i) {};
@@ -34,16 +31,13 @@ public:
     return ivalue*ivalue;
   };
 };
-//codesnippet end
 
 int main() {
 
-  //codesnippet virtualoverride
   Base fiveb(5);
   println("{}",fiveb.thevalue());
   Deriv fived(5);
   println("{}",fived.thevalue());
-  //codesnippet end
 
   return 0;
 }

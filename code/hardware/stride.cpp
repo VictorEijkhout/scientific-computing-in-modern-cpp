@@ -96,7 +96,6 @@ int main(int argc,char ** argv) {
      */
     int microsec_duration;
     auto start_time = Clock::now();
-    //codesnippet cachestridetest
     #pragma omp parallel proc_bind(spread)
     {
       int my_thread_number = omp_get_thread_num();
@@ -108,7 +107,6 @@ int main(int argc,char ** argv) {
           my_flush_stream.transform_in_place( [] (floattype& x ) { x+=1.; }, stride );//snipexclude
       }
     }
-    //codesnippet end
     microsec_duration = compute_microsec_duration(start_time);
     cout << format(" .. ran for {} usec\n",microsec_duration);
 

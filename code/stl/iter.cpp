@@ -20,7 +20,6 @@ int main() {
 
   {
     cout << "Iter" << '\n';
-    //codesnippet veciterator
     vector<int> v{1,3,5,7};
     auto pointer = v.begin();
     cout << "we start at "
@@ -35,13 +34,11 @@ int main() {
     pointer--;
     cout << "last element: "
          << *pointer << '\n';
-    //codesnippet end
     cout << "iter" << '\n';
   }
 
   {
     cout << "Erase.." << '\n';
-    //codesnippet vecerase
     vector<int> v{1,3,5,7,9};
     cout << "Vector: ";
     for ( auto e : v ) cout << e << " ";
@@ -54,7 +51,6 @@ int main() {
     cout << "Erased: ";
     for ( auto e : v ) cout << e << " ";
     cout << '\n';
-    //codesnippet end
     cout << "..erase" << '\n';
   }
 

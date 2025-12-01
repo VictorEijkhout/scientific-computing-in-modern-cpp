@@ -22,10 +22,8 @@ int main()
   b = A*x;
 
   // compute x through Moore-Penrose inverse
-  //codesnippet geninverse
   auto gen_inverse = ( A.transpose() * A ).inverse() * A.transpose();
   x = gen_inverse *b;
-  //codesnippet end
 
   cout << "slope=" << x(0) << ", intercept=" << x(1) << '\n';
   

@@ -8,7 +8,6 @@ int main() {
   float zero;
   cin >> zero;
 
-  //codesnippet fenvdivbyzero
   float result = 1.f/zero;
   cout << "result: " << result << '\n';
   if (std::fetestexcept(FE_DIVBYZERO))
@@ -16,7 +15,6 @@ int main() {
   else
     std::cout
       << "division by zero not reported\n";
-  //codesnippet end
 
   return 0;
 }

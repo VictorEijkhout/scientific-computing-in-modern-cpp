@@ -23,7 +23,6 @@ using std::vector;
 #include <array>
 using std::array,std::to_array;
 
-//codesnippet spaceshipclass1
 class Record {
 private:
   static inline int nrecords{0};
@@ -32,19 +31,15 @@ private:
 public:
   Record( string name )
     : name(name) { myrecord = nrecords++; };
-  //codesnippet end
-  //codesnippet spaceshipclass1order
   std::strong_ordering operator<=>( const Record& other ) const {
     return myrecord<=>other.myrecord;
   };
   bool operator==( const Record& other) const {
     return myrecord==other.myrecord;
   };
-  //codesnippet end
 };
 
 #include <compare>
-//codesnippet spaceshipclass2
 template<typename T>
 class Coordinate {
 private:
@@ -52,8 +47,6 @@ private:
 public:
   Coordinate( T x,T y )
     : components( to_array({x,y} ) ) {};
-  //codesnippet end
-  //codesnippet spaceshipclass2order
   std::partial_ordering operator<=>( const Coordinate& other ) const {
     std::strong_ordering c = components[0] <=> other.components[0];
     for (int i = 1; i <components.size(); ++i) {
@@ -68,14 +61,12 @@ public:
 	return false;
     return true;
   };
-  //codesnippet end
 };
 
 int main() {
 
   cout << "Record\n";
   // WARNING some of these comparisons seem ambiguous
-  //codesnippet spaceshipclass1test
   Record alice("alice"), bob("bob");
   println("expect  t f  t t  f f");
   println( "{}", (alice==alice) );
@@ -84,18 +75,15 @@ int main() {
   println( "{}", (alice<bob) );
   println( "{}", (alice>=bob) );
   println( "{}", (alice>bob) );
-  //codesnippet end
   cout << " .. record\n";
   
   cout << "Partial\n";
-  //codesnippet spaceshipclass2test
   Coordinate<int> p12(1,2),p24(2,4),p31(3,1);
   println("expect t t f");
   println("{}",(p12==p12));
   println("{}",(p12<p24));
   println("{}",
       (p12<p31 or p12>p31 or p12==p31));
-  //codesnippet end
   cout << " .. partial\n";
 
   return 0;

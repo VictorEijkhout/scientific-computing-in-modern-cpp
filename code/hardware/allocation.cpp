@@ -49,10 +49,8 @@ Cache<R>::Cache( uint64_t stream_cache_in_words,int nthreads,bool trace )
 template <typename R>
 void Cache<R>::allocate() {
   auto allocated_size_in_words = padded_stream_cache_in_words()*nstreams;
-  //codesnippet allocsmallpage
   allocation_ = reinterpret_cast<R*>
     ( std::aligned_alloc( 4096,allocated_size_in_words*sizeof(R) ) );
-  //codesnippet end
   if (!allocation_) throw("Cache allocation failed");
   if (trace_) 
     std::cout << format("check 4k align: {}\n",
@@ -111,7 +109,6 @@ void Cache<R>::set( R v ) {
     e = v;
 };
 
-//codesnippet hwcachetransform
 template <typename R>
 void Cache<R>::transform_in_place
     ( std::function< void(R&) > f,int stride,int nrepeats ) {
@@ -120,7 +117,6 @@ void Cache<R>::transform_in_place
       f( thecache[i] );
   }
 };
-//codesnippet end
 
 template <typename R>
 void Cache<R>::setrandom( R v ) {
@@ -140,7 +136,6 @@ void Cache<int>::setrandom( int v ) {
     e = v;
 };
 
-//codesnippet hwsumstream
 template< typename R >
 R sum_stream( span<R> stream ) {
   if (stream.size()==0)
@@ -155,9 +150,7 @@ R sum_stream( span<R> stream ) {
 #endif
   return sum;
 };
-//codesnippet end
 
-//codesnippet cachesumstream
 template <typename R>
 R Cache<R>::sumstream(int repeats,size_t length,size_t byte_offset /* =0 default */ ) const {
   R s{0};
@@ -168,13 +161,11 @@ R Cache<R>::sumstream(int repeats,size_t length,size_t byte_offset /* =0 default
       s += *( start_point+w ) * r;
   return s;
 };
-//codesnippet end
 
 template <typename R>
 void Cache<R>::make_linked_list( size_t length,bool random_traversal,bool tracing ) {
   if (random_traversal) {
     vector<R> indices(length);
-    //codesnippet linkedcache
     std::iota(indices.begin(),indices.end(),0);
     std::random_device r;
     std::mt19937 g(r());
@@ -182,7 +173,6 @@ void Cache<R>::make_linked_list( size_t length,bool random_traversal,bool tracin
     auto data = thecache;
     for (size_t i=0; i<indices.size(); i++)
       data[i] = indices[i];
-    //codesnippet end
     if (tracing) {
       std::cout << "Pointer chasing: ";
       std::copy(indices.begin(), indices.end(),
@@ -202,16 +192,12 @@ R Cache<R>::traversal( size_t n_accesses,R res,bool tracing ) const {
 };
 template <>
 int Cache<int>::traversal( size_t n_accesses,int res,bool tracing ) const {
-  //codesnippet linkedcachetraverse
   auto data = thecache;
   for (size_t i=0; i<n_accesses; i++) {
     res = data[res];
-    //codesnippet end
     if (tracing)
       std::cout << res << " ";
-  //codesnippet linkedcachetraverse
   }
-  //codesnippet end
   if (tracing) std::cout << "\n";
   return res;
 };

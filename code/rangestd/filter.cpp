@@ -22,7 +22,6 @@ using std::any_of;
 int main() {
 
   cout << "Filter\n";
-  //codesnippet rangefilter
   vector<float> numbers
     {1,-2.2,3.3,-5,7.7,-10};
   for ( auto n :
@@ -33,7 +32,6 @@ int main() {
       ) 
     cout << n << " ";
   cout << '\n';
-  //codesnippet end
   cout << " .. filter\n";
 
   cout << "Count\n";

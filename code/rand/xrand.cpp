@@ -16,7 +16,6 @@ using std::cout;
 
 int main() {
 
-  //codesnippet c11rand
   // seed the generator
   std::random_device r;
   // set the default random number generator
@@ -28,7 +27,6 @@ int main() {
     cout << "random: "
          << distribution(generator)
          << '\n';
-  //codesnippet end
 
   return 0;
 }

@@ -33,7 +33,6 @@ using std::pair,std::tuple,std::make_tuple;
 using FloatType = double;
 using idxint = std::int64_t;
 
-//codesnippet toeplitzvec
 template< typename F >
 class Vector : private std::vector<F> {
 public:
@@ -45,7 +44,6 @@ private:
 public:
   Vector( idxint m,idxint n )
     : m(m),n(n),std::vector<F>::vector<F>(m*n) {};
-  //codesnippet end
   F operator[]( idxint i,idxint j ) const;
   F& operator[]( idxint i,idxint j );
   auto dimensions() const {
@@ -66,7 +64,6 @@ public:
   };
 };
 
-//codesnippet toeplitzmat
 template< typename F >
 using Leg = tuple<int,int,F>;
 
@@ -78,8 +75,6 @@ public:
   StencilMatrix
       ( const std::vector<Leg<F>>& legs )
     : legs(legs) {};
-  //codesnippet end
-  //codesnippet toeplitzmatprod
   void times( const Vector<F>& rhs,Vector<F>& lhs ) const {
     // vector dimensions; enforce agreement
     auto [m,n] = rhs.dimensions();
@@ -95,7 +90,6 @@ public:
                      j<std::min(n,n-jshift); ++j )
           lhs[i,j] += v * rhs[i+ishift,j+jshift];
   };
-  //codesnippet end
       // try {
       // } catch (...) { println("Error in leg [{},{}]",ishift,jshift); throw; }
 // answer code removed

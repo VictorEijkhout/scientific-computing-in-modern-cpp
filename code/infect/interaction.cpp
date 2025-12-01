@@ -26,20 +26,14 @@ int main() {
       tuple<float,int,bool>{1.f,1,true},
       {.5f,20,true},
       {0.f,20,false} } ) {
-    //codesnippet fluspecs
     Disease flu;
     flu.duration() = 20;
     flu.transfer_probability() = p;    
-    //codesnippet end
-    //codesnippet flutransfer
     Person infected,healthy;
     infected.infect(flu);
-    //codesnippet end
     cout << "healthy: " << boolalpha << healthy.is_healthy() << '\n';
     for ( int day=0; day<days; ++day )
-    //codesnippet flutransfer
       healthy.touch(infected);
-    //codesnippet end
     auto sick = healthy.is_sick();
     cout << "Days: " << days
 	 << " p= " << p

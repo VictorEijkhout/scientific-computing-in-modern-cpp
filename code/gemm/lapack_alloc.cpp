@@ -37,11 +37,9 @@ void dgemm_(char*,char*,int*,int*,int*,
 #endif
 
 class Matrix {
-  //codesnippet matspanmembers
 private:
   int m,n,lda;
   span<double> data;
-  //codesnippet end
 public:
   Matrix(int m,int lda,int n,double *data)
     : m(m),n(n),lda(lda),
@@ -50,13 +48,11 @@ public:
       cout << "LDA=" << lda << " lt M=" << m << '\n'; throw(1); }
   };
 // answer code removed
-  //codesnippet matspandata
   auto get_double_data() {
     double *adata;
     adata = data.data();
     return adata;
   };
-  //codesnippet end
 // answer code removed
   auto min() {
     auto matdata = get_double_data();
@@ -171,14 +167,12 @@ int main() {
 
   int M,LDA,N;
 
-  //codesnippet spanmatrix
   // example values for M,LDA,N
   M = 2; LDA = M+2; N = 3;
   // create a vector to contain the data
   vector<double> one_data(LDA*N,1.);
   // create a matrix using the vector data
   Matrix one(M,LDA,N,one_data.data());
-  //codesnippet end
 
   M = 2; N = 3;
   vector<double> two_data(M*N,2.);

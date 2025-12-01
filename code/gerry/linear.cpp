@@ -27,7 +27,6 @@ using std::vector;
 // answer code removed
 
 class Districting;
-//codesnippet popclass
 class Population {
 private:
   vector<Voter> population;
@@ -36,7 +35,6 @@ public:
   // construct explicit population
   Population( vector<Voter> population,bool trace=false )
     : population(population),trace(trace) {};
-  //codesnippet end
   // construct from 0101 string
   Population( string rds,bool trace=false )
     : trace(trace) {
@@ -189,29 +187,23 @@ int main() {
 
   cout << "Voters" << '\n';
   {
-    //codesnippet voterpos
     cout << "Voter 5 is positive:" << '\n';
     Voter nr5(5,+1);
     cout << nr5.print() << '\n';
-    //codesnippet end
   }
   cout << '\n';
 
   {
-    //codesnippet voterneg
     cout << "Voter 6 is negative:" << '\n';
     Voter nr6(6,-1);
     cout << nr6.print() << '\n';
-    //codesnippet end
   }
   cout << '\n';
 
   try {
-    //codesnippet voterwrong
     cout << "Voter 7 is weird:" << '\n';
     Voter nr7(7,3);
     cout << nr7.print() << '\n';
-    //codesnippet end
   } catch (...) {
     cout << "Error in creating voter 7" << '\n';
   }
@@ -223,7 +215,6 @@ int main() {
    */
   {
     cout << "Populationbasics" << '\n';
-    //codesnippet populationexample
     string pns( "-++--" );
     Population some(pns);
     cout << "Population from string "
@@ -234,7 +225,6 @@ int main() {
     cout << "sub population 1--3" << '\n';
     cout << ".. size: " << group.size() << '\n';
     cout << ".. lean: " << group.lean() << '\n';
-    //codesnippet end
     cout << "populationbasics" << '\n';
   }
   cout << '\n';
@@ -244,25 +234,21 @@ int main() {
    */
   cout << "Districtbasics" << '\n';
   {
-    //codesnippet district
     cout << "Making district with one B voter"
          << '\n';
     Voter nr5(5,+1);
     District nine( nr5 );
     cout << ".. size: " << nine.size() << '\n';
     cout << ".. lean: " << nine.lean() << '\n';
-    //codesnippet end
   }
   cout << '\n';
 
   {
-    //codesnippet district
     cout << "Making district ABA" << '\n';
     District nine( vector<Voter>
 		   { {1,-1},{2,+1},{3,-1} } );
     cout << ".. size: " << nine.size() << '\n';
     cout << ".. lean: " << nine.lean() << '\n';
-    //codesnippet end
   }
   cout << "districtbasics" << '\n';
   cout << '\n';
@@ -290,7 +276,6 @@ int main() {
 
   {
     cout << "Gerryempty" << '\n';
-    //codesnippet gerryempty
     cout << "Making single voter population B" << '\n';
     Population people( vector<Voter>{ Voter(0,+1) } );
     cout << ".. size: " << people.size() << '\n';
@@ -300,10 +285,8 @@ int main() {
     cout << "Start with empty districting:" << '\n';
     cout << ".. number of districts: "
          << gerry.size() << '\n';
-    //codesnippet end
     cout << "gerryempty" << '\n';
 
-    //codesnippet gerryextend
     cout << "Add one B voter:" << '\n';
     gerry = gerry.extend_with_new_district( people.at(0) );
     cout << ".. number of districts: " << gerry.size() << '\n';
@@ -319,13 +302,11 @@ int main() {
     gerry = gerry.extend_with_new_district( Voter(4,+1) );
     cout << ".. number of districts: " << gerry.size() << '\n';
     cout << ".. lean: " << gerry.lean() << '\n';
-    //codesnippet end
   }
   cout << '\n';
 
   {
     cout << "District5" << '\n';
-    //codesnippet district5
     Population five("+++--");
     cout << "Redistricting population: " << '\n'
          << five.print() << '\n';
@@ -336,7 +317,6 @@ int main() {
     cout << gerry.print() << '\n';
     cout << ".. minority rule: "
          << gerry.rule() << '\n';
-    //codesnippet end
     cout << "district5" << '\n';
   }
   cout << '\n';

@@ -86,13 +86,11 @@ public:
 	) const {
     const int n = size();
     Vector result(n);
-    //codesnippet graphmultiply
     for ( int row=0; row<n; ++row ) {
       for ( int col=0; col<n; ++col) {
 	result[col] = add( result[col], mult( left[row],adjacency[row][col] ) );
       }
     }
-    //codesnippet end
     return result;
   };
   string str() const {

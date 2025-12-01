@@ -21,13 +21,11 @@ using std::println;
 
 int main() {
 
-  //codesnippet floatoverflow
   float bignum = 1.e40;
   float product = bignum*bignum;
   println("product: {}",product);
   println("overflow: {}",
       std::isinf(product));
-  //codesnippet end
 #if 0
   cout << "product: " << product
        << "\noverflow: " << boolalpha

@@ -8,11 +8,9 @@
  ****
  ****************************************************************/
 
-//codesnippet constchange
 void f(const int i) {
   ++i; // COMPILER ERROR!
 }
-//codesnippet end
 
 int main() {
 

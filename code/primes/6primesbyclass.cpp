@@ -36,14 +36,12 @@ int main() {
   int nprimes;
   cout << "How many primes do you want? " << '\n';
 
-  //codesnippet primesequencemain
   cin >> nprimes;
   primegenerator sequence;
   while (sequence.number_of_primes_found()<nprimes) {
     int number = sequence.nextprime();
     cout << "Number " << number << " is prime" << '\n';
   }
-  //codesnippet end
 
   return 0;
 }

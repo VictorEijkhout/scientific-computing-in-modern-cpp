@@ -26,7 +26,6 @@ namespace rng = std::ranges;
 
 namespace matlib {
 
-  //codesnippet vnormdef
   class vector
     : public std::vector<double> {
   public:
@@ -37,7 +36,6 @@ namespace matlib {
     double vecnorm( norm_type typ ) {
       switch (typ) {
       case Norm_1 :
-  //codesnippet end
 	return accumulate
 	  ( begin(),end(), 0.,
 	    [] ( auto acc, auto e ) {
@@ -65,14 +63,12 @@ int main() {
   values[0] = 1; values[1] = 2; values[2] = -3;
 
   using namespace matlib;
-  //codesnippet vnormuse
   cout << values.vecnorm
     ( vector::Norm_1 ) << '\n';
   cout << values.vecnorm
     ( vector::Norm_2 ) << '\n';
   cout << values.vecnorm
     ( vector::Norm_inf ) << '\n';
-  //codesnippet end
 
   return 0;
 }

@@ -29,31 +29,25 @@ namespace rng = std::ranges;
 
 // #include <mdspan>
 
-//codesnippet mdspankokkos
 #include "mdspan/mdspan.hpp"
 namespace md = Kokkos;
 namespace KokkosEx = MDSPAN_IMPL_STANDARD_NAMESPACE::MDSPAN_IMPL_PROPOSED_NAMESPACE;
 namespace mdx = KokkosEx;
-//codesnippet end
 
 int main() {
   constexpr int M=5,N=10;
 
-  //codesnippet mdspan2d
   // matrix in row major
   vector<float> A(M*N);
   md::mdspan
     Amd{ A.data(),M,N };
     // also:  Amd{ A.data(),md::extents{M,N} };
-  //codesnippet end
   cout << Amd.extent(0) << " x " << Amd.extent(1) << '\n';
 
-  //codesnippet mdspan2f
   // matrix in column major
   vector<float> B(M*N);
   md::mdspan<float, md::extents<int, M,N>, md::layout_left>
     Bmd{B.data()};
-  //codesnippet end
 
   /*
    * Fill with consecutive integers, row-by-row
@@ -69,7 +63,6 @@ int main() {
   auto rowsummer = [] ( const auto& mat ) -> void {
     // can't get this to work:
     // auto [M,N] = mat.extents();
-    //codesnippet md2drowsum
     int M = mat.extent(0); int N = mat.extent(1);
     vector<float> rowsums(N);
     for ( int row=0; auto& rs : rowsums ) {
@@ -80,7 +73,6 @@ int main() {
       rs = rng::accumulate( the_row, 0.f );
       row++;
     }
-    //codesnippet end
      {
       auto print =
 	[init=true] (float rs) mutable {

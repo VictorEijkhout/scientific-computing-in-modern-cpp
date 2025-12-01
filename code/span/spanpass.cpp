@@ -20,7 +20,6 @@ using std::format;
 #include <span>
 using std:: span;
 
-//codesnippet spanpass
 void f( span<int> s ) { 
   println("{}",s[0]);
 }
@@ -31,7 +30,6 @@ int main() {
   f( b );
   vector<int> c(5,3);
   f( c );
-//codesnippet end
 
   return 0;
 }

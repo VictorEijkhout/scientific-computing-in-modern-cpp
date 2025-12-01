@@ -23,7 +23,6 @@ using std::println,std::print;
 int main() {
 
   cout << "Limit\n";
-  //codesnippet unsignedlimit
   println("max int     : {}",
       std::numeric_limits<int>::max());
   println("min int     : {}",
@@ -32,7 +31,6 @@ int main() {
       std::numeric_limits<unsigned int>::max());
   println("min unsigned: {}",
       std::numeric_limits<unsigned int>::min());
-  //codesnippet end
   cout << "limit\n";
 #if 0
   cout << "max int     : "
@@ -50,11 +48,9 @@ int main() {
 #endif
 
   cout << "Cmp\n";
-  //codesnippet unsignedcomp
   unsigned int one{1};
   int minusone{-1};
   println("less: {}",(minusone<one));
-  //codesnippet end
   cout << "cmp\n";
 #if 0
   cout << "less: "

@@ -34,13 +34,11 @@ bool is_prime( int n ) {
 int main() {
 
   // for each n there is an m>n, m even
-  //codesnippet allngreaterm
   all_of( rng::views::iota(1,20),
           [] ( auto n ) -> bool {
             return any_of( rng::views::iota(1),
                            [n] ( auto m ) -> bool {
                              if (m>n) {
-  //codesnippet end
                                cout << "Found " << m << " greater than " << n << '\n';
                                return true; } else return false;
                            }
@@ -108,7 +106,6 @@ int main() {
             return any_of( rng::views::iota(1),
                            [n] ( auto m ) -> bool {
                              if (m>n) {
-  //codesnippet end
                                cout << "Found " << m << " greater than " << n << '\n';
                                return true; } else return false;
                            }

@@ -23,11 +23,9 @@ using std::visit;
 
 class vector {};
 
-//codesnippet visitmvp1
 class sparse_matrix {
 public:
   vector multiply( const vector& in ) const;
-//codesnippet end
 };
 
 vector sparse_matrix::multiply( const vector& in ) const {
@@ -35,11 +33,9 @@ vector sparse_matrix::multiply( const vector& in ) const {
   return in;
 };
 
-//codesnippet visitmvp2
 class lowrank_matrix {
 public:
   vector multiply( const vector& in ) const;
-//codesnippet end
 };
 
 vector lowrank_matrix::multiply( const vector& in ) const {
@@ -47,7 +43,6 @@ vector lowrank_matrix::multiply( const vector& in ) const {
   return in;
 };
 
-//codesnippet visitmvp3
 class multiply_by {
 private:
   const vector& in;
@@ -58,18 +53,14 @@ public:
   vector operator()( lowrank_matrix m ) {
     return m.multiply(in); };
 };
-//codesnippet end
 
-//codesnippet visitmvp5
 template<class... Ts> struct overload
   : Ts... { using Ts::operator()...; };
 template<class... Ts> overload(Ts...)
   -> overload<Ts...>;
-//codesnippet end
 
 int main() {
 
-  //codesnippet visitmvp4
   variant<sparse_matrix,lowrank_matrix>
     this_is_sparse{ sparse_matrix{} },
     this_is_lowrank{ lowrank_matrix{} };
@@ -77,9 +68,7 @@ int main() {
   vector invec;
   visit( multiply_by{invec},this_is_sparse );
   visit( multiply_by{invec},this_is_lowrank );
-  //codesnippet end
 
-  //codesnippet visitmvp6
   visit
     ( overload{
       [invec] ( const sparse_matrix& m ) {
@@ -88,7 +77,6 @@ int main() {
         return m.multiply(invec); }
       },
       this_is_sparse );
-  //codesnippet end
 
   return 0;
 }

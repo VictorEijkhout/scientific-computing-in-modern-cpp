@@ -25,7 +25,6 @@ int main()
     if (i>0)
       throw(i);
   } catch( ... ) {
-    //codesnippet sourceloc
 #if defined(__cpp_lib_source_location)
     std::source_location loc_info
       = std::source_location::current();
@@ -33,7 +32,6 @@ int main()
 #else
     cout << "Exception at unknown source location\n";
 #endif
-    //codesnippet end
   }
 
   return 0;

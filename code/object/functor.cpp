@@ -19,33 +19,27 @@ using std::vector;
 #include <algorithm>
 using std::for_each;
 
-//codesnippet printfunctor
 class IntPrintFunctor {
 public:
   void operator()(int x) {
     println("{}",x);
   }
 };
-//codesnippet end
 
 // answer code removed
 
 int main() {
 
   cout << "One" << '\n';
-  //codesnippet printfunctor
   IntPrintFunctor intprint;
   intprint(5);
-  //codesnippet end
   cout << "one" << '\n';
 
   cout << "Two" << '\n';
-  //codesnippet functortworun
   IntPrintTimes printx2(2);
   printx2(1);
   for ( auto i : {5,6,7,8} )
     printx2(i);
-  //codesnippet end
   cout << "two" << '\n';
   
   // vector<int> ints{5,6,7,8};

@@ -63,10 +63,8 @@ int main(int argc,char ** argv) {
 
     std::cout << std::format("Associativity: {}\n",assoc);
 
-    //codesnippet cacheassocdata
     auto datasize_in_bytes = displacement_in_bytes * assoc;
     auto datasize_in_words = datasize_in_bytes / sizeof(floattype);
-    //codesnippet end
     auto words_accessed = how_many_repeats * assoc;
     if (tracing) 
       cout << format("Stride bytes={}, words={} and assoc={} => data in words {}\n",
@@ -85,12 +83,10 @@ int main(int argc,char ** argv) {
     int microsec_duration;
     {
       auto start_time = Clock::now();
-      //codesnippet cacheassoctest
       auto data = write_data.get_stream().data();
       for ( int irepeat=0; irepeat<how_many_repeats; ++irepeat )
         for ( int loc=0; loc<data.size(); loc+=displacement_in_words )
           data[loc] += loc;
-      //codesnippet end
       microsec_duration = compute_microsec_duration(start_time);
     }
         // my_data_stream.transform_in_place

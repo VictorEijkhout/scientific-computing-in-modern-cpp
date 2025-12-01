@@ -11,10 +11,8 @@
 #include <iostream>
 using std::cin, std::cout;
 
-//codesnippet incstdarray
 #include <array>
 using std::array;
-//codesnippet end
 
 template<int d>
 class arrayclass {
@@ -33,14 +31,12 @@ public:
 
 int main() {
 
-  //codesnippet usestdarray
   {
     array<float,5> v5;
     cout << "size: " << v5.size() << '\n';
     // WRONG: no such function
     // v5.push_back(2);
   }
-  //codesnippet end
 
   {
     array<int,3> i3{17,19,23};

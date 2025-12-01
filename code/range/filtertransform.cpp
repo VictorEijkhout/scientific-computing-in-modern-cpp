@@ -38,7 +38,6 @@ int main()
 
   {
     cout << "Zero" << '\n';
-    //codesnippet filtertransform0
     vector<int> v{ 1,2,3,4,5,6 };
     cout
       << "Original data:\n  "
@@ -51,11 +50,9 @@ int main()
     cout << "Times two:\n  ";
     for ( auto c : times_two )
       cout << c << " "; cout << '\n';
-    //codesnippet end
     cout << "zero" << '\n';
 
     cout << "One" << '\n';
-    //codesnippet filtertransform1
     auto over_five = times_two
       | rng::views::filter
           ( [] (int i) {
@@ -63,20 +60,16 @@ int main()
     cout << "Over five: ";
     for ( auto c : over_five )
       cout << c << " "; cout << '\n';
-    //codesnippet end
     cout << "one" << '\n';
   }
 
   {
     cout << "Second" << '\n';
-    //codesnippet filtertransformpipe
     vector<int> v{ 1,2,3,4,5,6 };
-    //codesnippet end
     cout << "Original data: "
          << "\n  "
          << vector_as_string(v)
          << '\n';
-    //codesnippet filtertransformpipe
     auto times_two_over_five = v
       | rng::views::transform
           ( [] (int i) {
@@ -84,7 +77,6 @@ int main()
       | rng::views::filter
           ( [] (int i) {
             return i>5; } );
-    //codesnippet end
     cout << "Times two over five:\n  ";
     for ( auto c : times_two_over_five ) cout << c << " "; cout << '\n';
     cout << "second" << '\n';

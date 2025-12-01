@@ -15,22 +15,18 @@ using fmt::format;
 
 // NO: using namespace geometry;
 
-//codesnippet nameinclude
 #include <vector>
 #include "geolib.hpp" // this contains the geometry namespace
 int main() {
   // std vector of geom segments:
   std::vector<geometry::segment> segments;
   segments.push_back( geometry::segment( geometry::point(1,1),geometry::point(4,5) ) );
-  //codesnippet end
   std::cout << "First segment has length " << segments[0].size() << '\n';
 
-  //codesnippet namemyvecuse
   std::vector<geometry::vector<float>> vectors;
   vectors.push_back( geometry::vector<float>( "a", 5 ) );
   cout << fmt::format("First vector, \"{}\" has size {}\n",
 		      vectors[0].name(),vectors[0].size());
-  //codesnippet end
 
   return 0;
 }

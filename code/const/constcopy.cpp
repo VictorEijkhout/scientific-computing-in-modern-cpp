@@ -23,20 +23,17 @@ public:
   };
 };
 
-//codesnippet constcopy
 void f_with_copy(has_int other) {
   cout << "function with copy"
        << '\n'; };
 void f_with_ref(const has_int &other) {
   cout << "function with ref"
        << '\n'; };
-//codesnippet end
 
 int main() {
 
   has_int an_int(5);
   
-//codesnippet constcopy
   cout << "Calling f with copy..."
        << '\n';  
   f_with_copy(an_int);
@@ -44,7 +41,6 @@ int main() {
   cout << "Calling f with ref..."
        << '\n';  
   f_with_ref(an_int);
-//codesnippet end
 
   cout << "... done" << '\n';
   

@@ -28,14 +28,12 @@ using matrixvalue = float;
 const matrixvalue empty = false;
 const matrixvalue filled = true;
 
-//codesnippet adjvecdense
 class Vector {
 private:
   vector<vectorvalue> values;
 public:
   Vector( int n )
     : values( n,infinite ) {};
-  //codesnippet end
   //: values( vector<vectorvalue>(n,infinite) ) {};
   // indexing
   vectorvalue& operator[](int i) { return values[i]; };
@@ -64,7 +62,6 @@ public:
   };
 };
 
-//codesnippet adjmatdense
 class AdjacencyMatrix {
 private:
   vector<vector<matrixvalue>> adjacency;
@@ -73,7 +70,6 @@ public:
     : adjacency( vector<vector<matrixvalue>>
 		 ( n,vector<matrixvalue>(n,empty) ) ) {
   };
-//codesnippet end
   int size() const { return adjacency.size(); };
   AdjacencyMatrix& diagonal() {
     const int n = size();

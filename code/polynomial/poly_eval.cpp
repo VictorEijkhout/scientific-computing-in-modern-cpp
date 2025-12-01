@@ -22,7 +22,6 @@ using std::vector;
 #include <algorithm>
 using std::for_each;
 
-//codesnippet polydouble
 class polynomial {
 private:
   vector<double> coefficients;
@@ -37,7 +36,6 @@ public:
     return y;
   };
   double operator()(double x) const { return eval(x); };
-  //codesnippet end
   polynomial operator+( const polynomial &other ) const {
     vector<double> newcoeff( std::max(degree()+1,other.degree()+1),0. );
     int iloc{0};
@@ -61,13 +59,11 @@ public:
 
 int main() {
 
-  //codesnippet polydoubleapply
   polynomial x2p2( {2., 0., 1.} );
   for ( auto x : {1., 2., 3.} ) {
     auto y = x2p2(x);
     cout << "Second power of x=" << x << " plus 2 gives y=" << y << '\n';
   }
-  //codesnippet end
   polynomial x2( {0., 2.} );
   polynomial x2x2 = x2p2 + x2; // x^2 + 2x + 2
   cout << "sum polynomnial: " << x2x2.render() << '\n';

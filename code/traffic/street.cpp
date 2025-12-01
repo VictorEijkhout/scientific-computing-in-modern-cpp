@@ -110,7 +110,6 @@ TEST_CASE( "car driving","[13]" ) {
 
   // insert a single car
   float speed{1.f};
-  //codesnippet traffic1progress
   REQUIRE_NOTHROW( main_street.insert_with_speed(speed) );
   float time=0.f;
   for ( int t=0; t<static_cast<int>(main_street.length()); ++t ) { // one extra step
@@ -130,7 +129,6 @@ TEST_CASE( "car driving","[13]" ) {
     REQUIRE_NOTHROW( main_street.progress() );
   }
   REQUIRE( main_street.empty() );
-  //codesnippet end
 }
 
 TEST_CASE( "equal spacing","[14]" ) {
@@ -263,10 +261,8 @@ TEST_CASE( "hit the brakes","[23]" ) {
 
 int main( int argc,char const * const * argv ) {
 
-  //codesnippet catchsession
   Catch::Session session; // there can only be one session
   auto result = Catch::Session().run( argc, argv );
-  //codesnippet end
 
   using namespace Catch::Clara;
   int vis=0;

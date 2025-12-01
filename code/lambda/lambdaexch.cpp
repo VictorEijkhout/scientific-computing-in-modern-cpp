@@ -22,7 +22,6 @@ using std::vector;
 
 int main() {
 
-  //codesnippet mutablecomma
   vector x{1,2,3,4,5};
   auto printdigit =
     [start=true] (auto xx) mutable -> string{
@@ -35,7 +34,6 @@ int main() {
   for ( auto xx : x )
     cout << printdigit(xx);
   cout << '\n';
-  //codesnippet end
 
   return 0;
 }

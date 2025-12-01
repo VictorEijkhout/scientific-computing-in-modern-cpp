@@ -20,7 +20,6 @@ using std::println;
 bool f(int i) { return (i%2==0); };
 
 int main() {
-  //codesnippet lambdacountif
   int count=0;
   auto count_if_f =
     [&count] (int i) {
@@ -28,6 +27,5 @@ int main() {
   for ( int i : {1,2,3,4,5} )
     count_if_f(i);
   println("We counted: {}",count);
-  //codesnippet end
   return 0;
 }

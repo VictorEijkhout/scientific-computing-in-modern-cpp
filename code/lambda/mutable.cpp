@@ -26,7 +26,6 @@ int main() {
 
   {
     cout << "NonMutable\n";
-    //codesnippet lambdanonmutable
     float x = 2, y = 3;
     auto f = [x] ( float &y ) -> void {
       int xx = x*2; y += xx; };
@@ -34,13 +33,11 @@ int main() {
     cout << y << '\n';
     f(y);
     cout << y << '\n';
-    //codesnippet end
     cout << "nonmutable\n";
   }
   
   {
     cout << "YesMutable\n";
-    //codesnippet lambdayesmutable
     float x = 2, y = 3;
     auto f = [x] ( float &y ) mutable -> void {
       x *= 2; y += x; };
@@ -48,7 +45,6 @@ int main() {
     cout << y << '\n';
     f(y);
     cout << y << '\n';
-    //codesnippet end
     cout << "yesmutable\n";
   }
   

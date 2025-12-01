@@ -17,7 +17,6 @@ using std::cout;
 #include <expected>
 using std::expected;
 
-//codesnippet expectedconstruct
 std::expected<double,string> 
 square_root( double x ) {
   if (x<0)
@@ -29,17 +28,14 @@ square_root( double x ) {
     return result;
   }
 }
-//codesnippet end
 
 int main() {
 
-  //codesnippet expectedmain
   auto root = square_root(x);
   if (x)
     cout << "Root=" << root.value() << '\n';
   else if (root.error()==/* et cetera */ )
     /* handle the problem */
-  //codesnippet end
   
   return 0;
 }

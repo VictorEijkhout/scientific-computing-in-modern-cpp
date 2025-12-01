@@ -17,41 +17,33 @@ using std::cout;
 #include <print>
 using std::println;
 
-//codesnippet lambdapass
 void apply_to_5
     ( function< void(int) > f ) {
   f(5);
 }
-//codesnippet end
 
 int main() {
 
   cout << "Direct\n";
   cout <<
-    //codesnippet lambdaexp
   [] (float x,float y) -> float {
     return x+y; } ( 1.5, 2.3 )
-    //codesnippet end
   << '\n';
   cout << "direct\n";
 
   cout << "Var\n";
-  //codesnippet lambdavar
   auto summing = 
     [] (float x,float y) -> float {
     return x+y; };
   cout << summing ( 1.5, 2.3 ) << '\n';
   cout << summing ( 3.7, 5.2 ) << '\n';
-  //codesnippet end
   cout << "var\n";
   
   cout << "Pass\n";
-  //codesnippet lambdapass
   apply_to_5
     ( [] (int i) {
       println("Int: {}",i);
      } );
-  //codesnippet end
   cout << "pass\n";
   
   return 0;

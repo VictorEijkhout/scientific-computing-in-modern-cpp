@@ -23,7 +23,6 @@ using std::function;
 
 int main() {
 
-  //codesnippet netwonttmethoduse
   double two = 2.;
   double sqrt2 =
     newton_root<double>
@@ -31,7 +30,6 @@ int main() {
       []    ( double x ) { return static_cast<double>(2) * x; },
       1.
       );
-  //codesnippet end
   cout << "Sqrt( 2 ) = " << sqrt2 << '\n';
   
   complex<double> sqrtm2 =

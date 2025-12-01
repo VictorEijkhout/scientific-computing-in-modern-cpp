@@ -23,7 +23,6 @@ public:
 
 int main() {
 
-  //codesnippet shareptr2
   cout << "set pointer2" << '\n';
   auto thing_ptr2 =
     make_shared<thing>();
@@ -36,7 +35,6 @@ int main() {
   cout << "overwrite pointer3"
        << '\n';
   thing_ptr3 = nullptr;
-  //codesnippet end
 
 #if 0
   // alternatively

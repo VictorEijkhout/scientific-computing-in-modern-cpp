@@ -19,7 +19,6 @@ int main()
 {
 
   {
-    //codesnippet xcatchbounds
     vector<float> x(5);
     for (int i=0; i<10; ++i) {
       try {
@@ -30,7 +29,6 @@ int main()
         break;
       }
     }
-    //codesnippet end
   }
 
   return 0;

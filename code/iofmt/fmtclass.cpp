@@ -27,7 +27,6 @@ public:
     : x(x),y(y) {};
 };
 
-//codesnippet fmtclassdef
 template<>
 class std::formatter<XYclass>{
 public:
@@ -38,14 +37,11 @@ public:
       ( ctx.out(),"[ {}, {} ]",z.x,z.y);
   };
 };
-//codesnippet end
 
 int main() {
 
-  //codesnippet fmtclassuse
   XYclass x(5,6.7);
   println("XYclass: {}",x);
-  //codesnippet end
 
   return 0;
 }

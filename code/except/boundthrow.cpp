@@ -19,10 +19,8 @@ int main()
 {
 
   {
-    //codesnippet xoutbounds
     vector<float> x(5);
     x.at(5) = 3.14;
-    //codesnippet end
   }
 
   return 0;

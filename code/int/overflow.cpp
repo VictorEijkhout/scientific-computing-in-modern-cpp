@@ -25,7 +25,6 @@ int main() {
 
   cout << "Dosigned\n";
   {
-    //codesnippet signedoverflow
     using inttype = int32_t;
     inttype twoG
       {static_cast<inttype>(2000'000'000)};
@@ -33,7 +32,6 @@ int main() {
     println("size of int: {}",sizeof(twoG));
     println(" .. with max: {}",imax);
     println("twoG+twoG = {}",twoG+twoG);
-    //codesnippet end
 #if 0
     cout << "size of int: "
          << sizeof(twoG)
@@ -45,7 +43,6 @@ int main() {
 
   cout << "\nUnsigned\n";
   {
-    //codesnippet unsignedoverflow
     using inttype = uint32_t;
     inttype fourG
       {static_cast<inttype>(4000'000'000)};
@@ -53,7 +50,6 @@ int main() {
     println("size of int: {}",sizeof(fourG));
     println(" .. with max {}",imax);
     println("fourG+fourG = {}",fourG+fourG);
-    //codesnippet end
 #if 0
     cout << "size of int: "
          << sizeof(fourG)

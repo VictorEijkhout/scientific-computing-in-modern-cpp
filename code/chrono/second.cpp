@@ -27,13 +27,10 @@ void print_milliseconds( milliseconds s ) {
 
 int main() {
 
-  //codesnippet seconddef
   seconds s{3};
   auto t = 4s;
-  //codesnippet end
   
   cout << "BasicSeconds\n";
-  //codesnippet secondarith
   cout << "This lasts "
        << s.count() << "s" << '\n';
   cout << "This lasts ";
@@ -43,15 +40,12 @@ int main() {
        << "s is under 10 sec: "
        << boolalpha << (nine<10s)
        << '\n';
-  //codesnippet end
   cout << "basicseconds\n";
 
   cout << "MilliSeconds\n";
-  //codesnippet millisecond
   print_milliseconds( 5s );
   // DOES NOT COMPILE print_seconds( 6ms );
   print_seconds( duration_cast<seconds>(6ms) );
-  //codesnippet end
   cout << "milliseconds\n";
 
   return 0;

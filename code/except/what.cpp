@@ -20,7 +20,6 @@ int main()
   for ( auto iexp : { 1,2,3 } ) {
     try {
       switch (iexp) {
-        //codesnippet exceptwhat
       case 1 :
         [] (int s) { vector<int> x(s); }( -3 );
         break;
@@ -32,7 +31,6 @@ int main()
       case 3 :
         [] () { throw(5); }();
         break;
-        //codesnippet end
       default :
       cout << "Unknown experiment " << iexp << '\n';
       }

@@ -20,7 +20,6 @@ using std::bitset;
 
 int main() {
 
-  //codesnippet bitsetandor
   bitset<8> xb(6);
   bitset<8> yb(3);
   cout << "6|3 = " << (xb|yb)
@@ -28,7 +27,6 @@ int main() {
   auto xandy = (xb&yb).to_ulong();
   cout << "6&3 = " << (xb&yb)
        << " = " << xandy << '\n';
-  //codesnippet end
 #if 0
   auto xory = (xb|yb).to_ulong();
   println("6|3 = {} = {}",

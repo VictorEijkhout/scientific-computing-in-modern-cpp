@@ -118,9 +118,7 @@ int main( int argc,char **argv) {
     int initial_infect = result["initial"].as<int>();
     if (display)
       cout << "Infecting: " << initial_infect << '\n';
-    //codesnippet popinitinfect
     population.random_infection(fever,initial_infect);
-    //codesnippet end
 
     if (display) {
       cout << "Initial configuration:\n";

@@ -15,17 +15,14 @@ using std::cout;
 using std::shared_ptr;
 using std::make_shared;
 
-//codesnippet thingcall
 class thing {
 public:
   thing()  { cout << ".. calling constructor\n"; };
   ~thing() { cout << ".. calling destructor\n"; };
 };
-//codesnippet end
 
 int main() {
 
-  //codesnippet shareptr1
   cout << "set pointer1"
        << '\n';
   auto thing_ptr1 =
@@ -33,7 +30,6 @@ int main() {
   cout << "overwrite pointer"
        << '\n';
   thing_ptr1 = nullptr;
-  //codesnippet end
 
 #if 0
   // alternatively

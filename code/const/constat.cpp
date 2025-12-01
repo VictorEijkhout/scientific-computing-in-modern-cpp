@@ -15,7 +15,6 @@ using std::cout;
 #include <vector>
 using std::vector;
 
-//codesnippet constatclass
 class has_array {
 private:
   vector<float> values;;
@@ -44,7 +43,6 @@ int main() {
   cout << fives.sum() << '\n';
   fives.at(0) = 2;
   cout << fives.sum() << '\n';
-  //codesnippet end
   
   return 0;
 }

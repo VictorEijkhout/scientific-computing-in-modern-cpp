@@ -19,7 +19,6 @@ int main() {
 
   cout << "End Bracket" << '\n';
   {
-    //codesnippet vectorpush
     vector<int> mydata(5,2);
     // last element:
     cout << mydata.back()
@@ -30,18 +29,15 @@ int main() {
     // last element:
     cout << mydata.back()
          << '\n';
-    //codesnippet end
   }
   cout << "... bracket" << '\n';
 
   cout << "End Iterator" << '\n';
   {
-    //codesnippet vectorpushiterator
     vector<int> mydata(5,2);
     mydata.push_back(35);
     cout << mydata.size() << '\n';
     cout << *( --mydata.end() ) << '\n';
-    //codesnippet end
   }
   cout << "... iterator" << '\n';
 

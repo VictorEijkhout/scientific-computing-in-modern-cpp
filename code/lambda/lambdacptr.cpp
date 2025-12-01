@@ -15,15 +15,12 @@ using std::function;
 using std::cin;
 using std::cout;
 
-//codesnippet lambdacptr
 int cfun_add1( int i ) {
   return i+1; };
 int apply_to_5( int(*f)(int) ) {
   return f(5); };
-//codesnippet end
 int main() {
 
-//codesnippet lambdacptr
   auto lambda_add1 =
     [] (int i) { return i+1; };
   cout << "C ptr: "
@@ -32,7 +29,6 @@ int main() {
   cout << "Lambda: "
        << apply_to_5(lambda_add1)
        << '\n';
-//codesnippet end
 
   return 0;
 }

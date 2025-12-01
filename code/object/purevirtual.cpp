@@ -13,7 +13,6 @@ using std::cout;
 #include <sstream>
 #include <cmath>
 
-//codesnippet purevirtualoverride
 class Base {
 protected:
   int i;
@@ -30,7 +29,6 @@ public:
     return 25;
   };
 };
-//codesnippet end
 
 int main() {
 

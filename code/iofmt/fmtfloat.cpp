@@ -20,7 +20,6 @@ using std::println;
 int main() {
 
   float x;
-  //codesnippet fmtfloat
   x = 1.234567;
   for (int i=0; i<6; ++i) {
     println
@@ -28,7 +27,6 @@ int main() {
        x);
     x *= 10;
   }
-  //codesnippet end
   
   return 0;
 }

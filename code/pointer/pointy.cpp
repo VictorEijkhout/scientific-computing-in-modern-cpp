@@ -21,10 +21,8 @@ public:
 };
 
 int main() {
-  //codesnippet pointy
   auto Y = make_shared<HasY>(5);
   cout << Y->y << '\n';
   Y.get()->y = 6;
   cout << ( *Y.get() ).y << '\n';
-  //codesnippet end
 }

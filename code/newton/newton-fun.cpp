@@ -16,10 +16,8 @@ using std::cout;
 #include <functional>
 using std::function;
 
-//codesnippet newtonfgproto
 double f(double x);
 double fprime(double x);
-//codesnippet end
 
 // answer code removed
 
@@ -28,7 +26,6 @@ int main() {
 #if 0
   // reference code:
   {
-  //codesnippet newtonalg
   double x{1.};
   while ( true ) {
     auto fx = f(x);
@@ -37,7 +34,6 @@ int main() {
     x = x - fx/fprime(x);
   }
   }
-  //codesnippet end
 #else
   newton_root( f,fprime );
 #endif
@@ -45,8 +41,6 @@ int main() {
   return 0;
 }
 
-//codesnippet newtonfg
 double f(double x) { return x*x-2; };
 double fprime(double x) { return 2*x; };
-//codesnippet end
 

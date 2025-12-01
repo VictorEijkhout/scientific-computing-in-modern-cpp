@@ -18,7 +18,6 @@ using std::format;
 int main() {
 
   float x;
-  //codesnippet fmtsci
   float pi=3.14159f;
   cout <<
     format("|{:+.2e}|{:+.2e}|\n",
@@ -29,7 +28,6 @@ int main() {
   cout <<
     format("|{: .2e}|{: .2e}|\n",
            pi,-pi);
-  //codesnippet end
   
   return 0;
 }

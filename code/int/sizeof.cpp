@@ -22,7 +22,6 @@ using std::print,std::println;
 
 int main() {
 
-  //codesnippet sizeoffixed
   int8_t i8;
   uint8_t u8;
   int16_t i16;
@@ -33,7 +32,6 @@ int main() {
 	  sizeof(i16),
 	  sizeof(u16)
 	  );
-  //codesnippet end
 #if 0
   cout << sizeof(i8)
        << ", " << sizeof(u8)

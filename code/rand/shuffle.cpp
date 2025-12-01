@@ -44,20 +44,16 @@ int main() {
     };
 
   {
-    //codesnippet vectorshuffle
     std::vector<int> idxs(20);
     iota(idxs.begin(),idxs.end(),0);
-    //codesnippet end
 
     cout << "Iota:\n";
     for_each( idxs.begin(), idxs.end(), by_10s );
     cout << '\n';
  
     std::mt19937 g(r());
-    //codesnippet vectorshuffle
     std::shuffle
       (idxs.begin(), idxs.end(), g);
-    //codesnippet end
  
     cout << "Permute:\n";
     for_each( idxs.begin(), idxs.end(), by_10s );

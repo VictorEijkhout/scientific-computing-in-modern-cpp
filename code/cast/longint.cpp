@@ -13,7 +13,6 @@
 using namespace std;
 
 int main() {
-  //codesnippet longintcast
   int hundredk = 100000;
   int overflow =
     hundredk*hundredk;
@@ -23,7 +22,6 @@ int main() {
     static_cast<size_t>(hundredk)*hundredk;
   cout << "bignumber: "
        << bignumber << '\n';
-  //codesnippet end
   
   return 0;
 }

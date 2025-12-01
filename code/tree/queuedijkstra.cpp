@@ -93,7 +93,6 @@ int main() {
   Dag graph(graph_size); graph.make_edges(4);
   cout << graph.as_string();
 
-  //codesnippet qdsetup
   const unsigned inf = std::numeric_limits<unsigned>::max();
   using node_info = std::pair<unsigned,unsigned>;
   std::set< node_info > distances,to_be_done;
@@ -101,21 +100,17 @@ int main() {
   to_be_done.insert( {0,0} );
   for (unsigned n=1; n<graph_size; ++n)
     to_be_done.insert( {n,inf} );
-  //codesnippet end
 
-  //codesnippet qdloop
   for (;;) {
     if (to_be_done.size()==0) break;
     /*
      * Find the node with least distance
      */
-    //codesnippet end
     auto closest_node = min_element
       ( to_be_done.begin(),to_be_done.end(),
         [] ( const node_info& x,const node_info& y ) { return x.second < y.second ; }
         );
     auto [nclose,dclose] = *closest_node;
-    //codesnippet qdloop
     cout << "min: " << nclose << " @ " << dclose << '\n';
     /*
      * Move that node to done,
@@ -128,27 +123,20 @@ int main() {
     const auto& nbors = graph.neighbors(nclose);
     for ( auto n : nbors ) {
       // find `n' in distances
-      //codesnippet end
       const auto dfind = std::find_if
         ( distances.begin(),distances.end(), [n] (auto d) { return d.first==n; } );
       if (dfind==distances.end() )
-        //codesnippet qdloop
         {
           /*
            * if `n' does not have known distance,
            * find where it occurs in `to_be_done' and update
            */
-          //codesnippet end
 // answer code removed
-          //codesnippet qdloop
           to_be_done.erase( cfind );
           to_be_done.insert( {n,dclose+1} );
-          //codesnippet end
         }
     }
-    //codesnippet qdloop
   }
-  //codesnippet end
 
   return 0;
 }

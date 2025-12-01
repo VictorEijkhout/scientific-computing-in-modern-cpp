@@ -35,12 +35,9 @@ float random_float() {
   return dis(gen);
 }
 
-//codesnippet walkvec
 template< typename VECTOR >
 void random_vector( VECTOR& v );
-//codesnippet end
 
-//codesnippet walkwalk1
 vector<float> random_walk_1( int steps ) {
   vector<float> result(3);
   for (int s=0; s<steps; ++s) {
@@ -51,9 +48,7 @@ vector<float> random_walk_1( int steps ) {
   }
   return result;
 }
-//codesnippet end
 
-//codesnippet walkwalk2
 array<float,3> random_walk_2( int steps ) {
   array<float,3> result = {0,0,0};
   for (int s=0; s<steps; ++s) {
@@ -65,9 +60,7 @@ array<float,3> random_walk_2( int steps ) {
   }
   return result;
 }
-//codesnippet end
 
-//codesnippet walkwalk3
 void random_walk_3( vector<float>* result, vector<float>* update,int steps ) {
   for (int s=0; s<steps; ++s) {
     random_vector<vector<float>>( *update );
@@ -75,7 +68,6 @@ void random_walk_3( vector<float>* result, vector<float>* update,int steps ) {
       (*result)[i] += (*update)[i];
   }
 }
-//codesnippet end
 
 int main() {
 
@@ -83,7 +75,6 @@ int main() {
     auto start_time = high_resolution_clock::now();
     auto steps = 500'000'000;
     float distance = 0;
-    //codesnippet walkwalkmain
     if (test==1) {
       vector<float> travel;
       travel = random_walk_1(steps);
@@ -98,7 +89,6 @@ int main() {
       random_walk_3(&travel, &step, steps);
       distance = norm(travel);
     }
-    //codesnippet end
     auto end_time = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(end_time - start_time).count();
     cout << "Test " << test << ": distance: " << distance << '\n';

@@ -8,10 +8,8 @@
  ****
  ****************************************************************/
 
-//codesnippet modimpl0
 // implementation unit, nothing exported
 module module_with_intface;
 // function to be exported by the interface
 int f( int i ) { return i/2; };
-//codesnippet end
 

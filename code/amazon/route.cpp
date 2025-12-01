@@ -310,13 +310,11 @@ int main() {
 
   cerr << "Addresstest" << '\n';
   {
-    //codesnippet amazonaddressuse
     Address one(1.,1.),
       two(2.,2.);
     cerr << "Distance: "
 	 << one.distance(two)
 	 << '\n';
-    //codesnippet end
   }
   cerr << ".. addresstest" << '\n';
 
@@ -366,7 +364,6 @@ int main() {
 
   {
     cerr << "Square5" << '\n';
-    //codesnippet square5
     Route deliveries;
     deliveries.add_address( Address(0,5) );
     deliveries.add_address( Address(5,0) );
@@ -380,7 +377,6 @@ int main() {
     cerr << "Square route:\n "
          << route.as_string()
          << "\n has length " << len << '\n';
-    //codesnippet end
     assert( CLOSE(len,20) );
     cerr << ".. square5" << '\n';
     cerr << '\n';

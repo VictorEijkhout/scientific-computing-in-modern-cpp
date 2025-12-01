@@ -14,7 +14,6 @@ using std::cout;
 
 #include <random>
 
-//codesnippet randomspace
 class generate {
 private:
   static inline std::default_random_engine engine;
@@ -24,7 +23,6 @@ public:
     return ints(generate::engine);
   };
 };
-//codesnippet end
 
 int main() {
 

@@ -16,7 +16,6 @@ using std::cout;
 #include <print>
 using std::println;
 
-//codesnippet gdbhello
 void say(int n) {
   println("hello world {}",n);
 }
@@ -32,5 +31,4 @@ int main() {
 
   return 0;
 }
-//codesnippet end
   

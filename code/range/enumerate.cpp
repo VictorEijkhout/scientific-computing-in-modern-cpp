@@ -31,23 +31,19 @@ int main()
 {
 
   {
-    //codesnippet enumerateinit
     vector<int> values{2,4,5,7,10};
     for ( size_t i=0; auto v : values )
       cout << "Element " << i++
            << ": " << v << '\n';
-    //codesnippet end
   }
 
   {
     cout << "Enumerate\n";
-    //codesnippet enumerateview
     vector<int> values{2,4,5,7,10};
     for ( auto [i,v] : values
             | rng::views::enumerate )
       cout << "Element " << i
            << ": " << v << '\n';
-    //codesnippet end
     cout << " .. enumerate\n";
   }
   
